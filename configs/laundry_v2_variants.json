@@ -1,0 +1,255 @@
+{
+  "variants": [
+    {
+      "name": "lauv3_spike_prep_pipeline",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "check_pockets",
+          "K": 60
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "remove_tissue",
+          "K": 50
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "remove_coins",
+          "K": 50
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "close_zippers",
+          "K": 40
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "turn_inside_out_delicate",
+          "K": 40
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pretreat_stain",
+          "K": 60
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_spike_safe_wash_path",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "load_washer_safe",
+          "K": 90
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wash_eco",
+          "K": 120
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dry_low_safe",
+          "K": 90
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "hang_dry",
+          "K": 80
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "fold_garment",
+          "K": 60
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "put_away_closet",
+          "K": 50
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_spike_recovery_and_care",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "delint_garment",
+          "K": 80
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "remove_lint_from_dryer",
+          "K": 70
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "add_softener_after",
+          "K": 60
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_hazoff_risky_side_effects",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "color-bled",
+            "lint-covered",
+            "shrunk"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_hazoff_damage",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_hazoff_safe_reward",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-wash",
+            "eco-washed"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_hazoff_quality_fluff",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "fresh-smell",
+            "lint-removed"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_mix_spike_prep_remove_safe_reward",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "check_pockets",
+          "K": 90
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pretreat_stain",
+          "K": 90
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-wash"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_mix_spike_safe_remove_risky_penalties",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wash_eco",
+          "K": 140
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dry_low_safe",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "color-bled",
+            "shrunk",
+            "lint-covered"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_mix_spike_recovery_remove_lintcovered",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "delint_garment",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "lint-covered"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lauv3_spike_blind_and_quick",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "load_washer_blind",
+          "K": 200
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wash_quick_risky",
+          "K": 180
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dry_high_risky",
+          "K": 160
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

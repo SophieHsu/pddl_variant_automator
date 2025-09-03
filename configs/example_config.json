@@ -1,0 +1,48 @@
+{
+  "variants": [
+    {
+      "name": "spike_any_open",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "open",
+          "K": 100000,
+          "at_end": false
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "remove_damage_effects",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "damaged",
+            "stubborn_sticking"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "swap_eggs",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

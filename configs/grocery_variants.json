@@ -1,0 +1,148 @@
+{
+  "variants": [
+    {
+      "name": "gro_spike_safe_vs_blind",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pick_item_safe",
+          "K": 60
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_spike_checkout_and_go",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "go_to_store",
+          "K": 80
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "checkout_item",
+          "K": 70
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_spike_bag_safe",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "bag_safe",
+          "K": 50
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_spike_coupon_and_reuse",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "apply_coupon",
+          "K": 40
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "use_reusable_bag",
+          "K": 40
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_hazoff_no_blind_pick",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pick"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_hazoff_unbroken_and_fresh",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "unbroken",
+            "fresh"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_hazoff_reuse_and_coupon",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "reusable-bag-used",
+            "coupon-applied"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_mix_spike_safe_remove_unbroken",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pick_item_safe",
+          "K": 90
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "unbroken"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "gro_mix_spike_bag_remove_fresh",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "bag_safe",
+          "K": 80
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "fresh"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

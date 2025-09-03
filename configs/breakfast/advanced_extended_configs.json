@@ -1,0 +1,164 @@
+{
+  "variants": [
+    {
+      "name": "ext_temporal_squeeze_cook_vs_microwave",
+      "transforms": [
+        {
+          "op": "scale_duration",
+          "action_substr": "cook_ingredient_in_preheated",
+          "factor": 3.0
+        },
+        {
+          "op": "scale_duration",
+          "action_substr": "microwave_ingredient_safe",
+          "factor": 2.0
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "drop_one_time_conflict"
+      }
+    },
+    {
+      "name": "ext_temporal_long_plate",
+      "transforms": [
+        {
+          "op": "scale_duration",
+          "action_substr": "plate",
+          "absolute": 8
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "reorder_or_violate"
+      }
+    },
+    {
+      "name": "ext_neutralize_damage_all",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "safety_prefs_trivial"
+      }
+    },
+    {
+      "name": "ext_neutralize_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "safety_and_blind_crack_trivial"
+      }
+    },
+    {
+      "name": "ext_budget_heat_flow",
+      "transforms": [
+        {
+          "op": "ensure_budget",
+          "name": "battery",
+          "init": 6
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "battery",
+          "action_substr": "preheat_pan",
+          "amount": 2
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "battery",
+          "action_substr": "cook_ingredient_in_preheated",
+          "amount": 3
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "subset_due_to_budget"
+      }
+    },
+    {
+      "name": "ext_budget_verify_vs_open",
+      "transforms": [
+        {
+          "op": "ensure_budget",
+          "name": "budget",
+          "init": 4
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "budget",
+          "action_substr": "verify_is_raw_egg",
+          "amount": 2
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "budget",
+          "action_substr": "open_can",
+          "amount": 3
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "choose_between_paths"
+      }
+    },
+    {
+      "name": "ext_mix_temporal_plus_spike",
+      "transforms": [
+        {
+          "op": "scale_duration",
+          "action_substr": "cook_ingredient_in_preheated",
+          "factor": 2.5
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "open_can",
+          "K": 120
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "ext_mix_neutralize_plus_type_swap",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

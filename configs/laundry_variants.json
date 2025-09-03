@@ -1,0 +1,144 @@
+{
+  "variants": [
+    {
+      "name": "lau_spike_safe_pipeline",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "sort_",
+          "K": 30
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "load_washer",
+          "K": 40
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wash_delicate",
+          "K": 100
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "hang_dry",
+          "K": 60
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "fold",
+          "K": 50
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_spike_machine_dry",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dry_normal",
+          "K": 90
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_spike_softener",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "add_softener_after",
+          "K": 70
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_hazoff_noblind_and_damage",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-wash",
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_hazoff_color_bleed",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "color-bled"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_hazoff_fresh_smell",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "fresh-smell"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_mix_spike_delicate_remove_bleed",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wash_delicate",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "color-bled"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "lau_mix_spike_dry_remove_undamaged",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dry_normal",
+          "K": 110
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

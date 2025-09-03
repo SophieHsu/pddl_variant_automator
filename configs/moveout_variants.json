@@ -1,0 +1,161 @@
+{
+  "variants": [
+    {
+      "name": "mo_spike_label_seal",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "label_box",
+          "K": 40
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "seal_box",
+          "K": 60
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_spike_cart_load",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "move_box_to_cart",
+          "K": 50
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "load_truck",
+          "K": 120
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_spike_wrap",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wrap_item",
+          "K": 80
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_spike_safe_pack_only",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pack_item_safe",
+          "K": 150
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_hazoff_no_blind",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_hazoff_undamaged_and_floor",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged",
+            "floor-undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_type_books_to_fragile",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "books": "fragile_item"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_type_tv_to_item",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "tv": "item"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_mix_spike_safe_remove_noblind",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pack_item_safe",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mo_mix_spike_cart_books_fragile",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "move_box_to_cart",
+          "K": 90
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "books": "fragile_item"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

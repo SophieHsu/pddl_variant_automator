@@ -1,0 +1,547 @@
+{
+  "variants": [
+    {
+      "name": "spike_01_season_egg_with_salt_15",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_with_salt",
+          "K": 15
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_02_preheat_pan_10",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "preheat_pan",
+          "K": 10
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_03_season_egg_blind_salt_10",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_blind_salt",
+          "K": 10
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_04_dispose_ingredient_25",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dispose_ingredient",
+          "K": 25
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_05_dump_can_to_150",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dump_can_to",
+          "K": 150
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_06_verify_is_raw_egg_50",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_raw_egg",
+          "K": 50
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_07_clean_container_harsh_safe_75",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "clean_container_harsh_safe",
+          "K": 75
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_08_verify_is_boiled_egg_50",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_boiled_egg",
+          "K": 50
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_09_season_egg_with_sugar_2500",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_with_sugar",
+          "K": 2500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_10_clean_container_soft_250",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "clean_container_soft",
+          "K": 250
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_11_crack_egg_boiled_250",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_boiled",
+          "K": 250
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_12_clean_container_harsh_damaging_500",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "clean_container_harsh_damaging",
+          "K": 500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_01_undamaged",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_02_stubborn_sticking",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "stubborn_sticking"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_03_blind_egg_crack",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_04_damaged",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "damaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_05_undamaged-stubborn_sticking",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged",
+            "stubborn_sticking"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_06_damaged-stubborn_sticking",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "damaged",
+            "stubborn_sticking"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_07_undamaged-blind_egg_crack",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged",
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazards_off_08_undamaged-damaged-stubborn_sticking-blind_egg_crack",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged",
+            "damaged",
+            "stubborn_sticking",
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_01_swap_eggs",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_02_milk1_fresh",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "fresh_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_03_milk2_spoiled",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk2": "spoiled_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_04_all_milk_fresh",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "fresh_milk",
+            "milk2": "fresh_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_05_all_milk_spoiled",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "spoiled_milk",
+            "milk2": "spoiled_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_06_bowl1_to_plate",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "bowl1": "plate"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_07_plate1_to_bowl",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "plate1": "bowl"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_08_raw_only_to_boiled",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_01_open_can",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "open_can",
+          "K": 50
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged",
+            "stubborn_sticking"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_02_verify_is_raw_egg",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_raw_egg",
+          "K": 150
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_03_cook_ingredient_in_preheated",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cook_ingredient_in_preheated",
+          "K": 50
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "damaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_04_plate",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "plate",
+          "K": 75
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_05_microwave_ingredient_safe",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "microwave_ingredient_safe",
+          "K": 50
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk2": "spoiled_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_06_add_topping",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "add_topping",
+          "K": 75
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "fresh_milk",
+            "milk2": "fresh_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_07_clean_container_harsh_safe",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "clean_container_harsh_safe",
+          "K": 150
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "stubborn_sticking"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_08_serve_milk_blind_spoiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "serve_milk_blind_spoiled",
+          "K": 75
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk2": "spoiled_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

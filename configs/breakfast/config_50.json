@@ -1,0 +1,712 @@
+{
+  "variants": [
+    {
+      "name": "spike_01_cook_ingredient_in_preheated",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cook_ingredient_in_preheated",
+          "K": 500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_02_crack_egg_raw",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_raw",
+          "K": 5000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_03_season_egg_with_sugar",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_with_sugar",
+          "K": 500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_04_preheat_pan",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "preheat_pan",
+          "K": 100000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_05_crack_egg_thinks_boiled_is_boiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_boiled_is_boiled",
+          "K": 1000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_06_season_egg_blind_salt",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_blind_salt",
+          "K": 50
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_07_season_egg_with_salt",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_with_salt",
+          "K": 250
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_08_cook_ingredient_in_non_preheated",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cook_ingredient_in_non_preheated",
+          "K": 5000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_09_crack_egg_boiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_boiled",
+          "K": 2500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_10_season_egg_blind_sugar",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "season_egg_blind_sugar",
+          "K": 1000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_11_dispose_ingredient",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "dispose_ingredient",
+          "K": 250
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_12_crack_egg_thinks_boiled_is_raw",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_boiled_is_raw",
+          "K": 500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_13_verify_is_sugar",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_sugar",
+          "K": 2500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_14_beat_egg",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "beat_egg",
+          "K": 100
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_15_verify_is_raw_egg",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_raw_egg",
+          "K": 100
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_16_transfer_ingredient",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "transfer_ingredient",
+          "K": 5000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_17_crack_egg_thinks_raw_is_boiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_raw_is_boiled",
+          "K": 100
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_18_crack_egg_thinks_raw_is_raw",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_raw_is_raw",
+          "K": 2500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_19_verify_is_salt",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_salt",
+          "K": 2500
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "spike_20_verify_is_boiled_egg",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_boiled_egg",
+          "K": 1000
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_01",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_02_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_03",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_04_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_05",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_06_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_07",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_08_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_09",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "hazard_neutralize_10_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_01_swap_eggs",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_02_milk1_fresh",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "fresh_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_03_milk2_spoiled",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk2": "spoiled_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_04_milks_both_fresh",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "fresh_milk",
+            "milk2": "fresh_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_05_milks_both_spoiled",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "milk1": "spoiled_milk",
+            "milk2": "spoiled_milk"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_06_raw_to_boiled_only",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_07_boiled_to_raw_only",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_08_bowl1_to_plate",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "bowl1": "plate"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_09_plate1_to_bowl",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "plate1": "bowl"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "type_10_pan_to_delicate",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "pan1": "delicate_pan"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_01_verify_is_salt",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_salt",
+          "K": 50
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_02_verify_is_sugar",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_sugar",
+          "K": 100000
+        },
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_03_verify_is_raw_egg",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_raw_egg",
+          "K": 100
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_04_verify_is_boiled_egg",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "verify_is_boiled_egg",
+          "K": 5000
+        },
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_05_preheat_pan",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "preheat_pan",
+          "K": 100
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_06_crack_egg_raw",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_raw",
+          "K": 1000
+        },
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_07_crack_egg_boiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_boiled",
+          "K": 2500
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_08_crack_egg_thinks_raw_is_boiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_raw_is_boiled",
+          "K": 500
+        },
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_09_crack_egg_thinks_raw_is_raw",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_raw_is_raw",
+          "K": 100
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "mix_10_crack_egg_thinks_boiled_is_boiled",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "crack_egg_thinks_boiled_is_boiled",
+          "K": 50
+        },
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

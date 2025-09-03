@@ -1,0 +1,131 @@
+{
+  "variants": [
+    {
+      "name": "reno_spike_tape_edges",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "tape_edges",
+          "K": 90
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_spike_cover_and_secondcoat",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cover_floor",
+          "K": 110
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "paint_second_coat",
+          "K": 130
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_spike_move_detail",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "move_furniture",
+          "K": 80
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "detail_edges",
+          "K": 70
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_spike_first_coat_safe",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "paint_first_coat_safe",
+          "K": 150
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_hazoff_noblind",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-paint"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_hazoff_floorundamaged",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "floor-undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_mix_spike_tape_hazoff_noblind",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "tape_edges",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-paint"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "reno_mix_spike_cover_spike_tools",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cover_floor",
+          "K": 100
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "clean_tools",
+          "K": 60
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

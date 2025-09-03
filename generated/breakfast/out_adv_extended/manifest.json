@@ -1,0 +1,105 @@
+[
+  {
+    "name": "ext_temporal_squeeze_cook_vs_microwave",
+    "domain": "out_adv_extended/ext_temporal_squeeze_cook_vs_microwave_domain.pddl",
+    "problem": "out_adv_extended/ext_temporal_squeeze_cook_vs_microwave_problem.pddl",
+    "log": [
+      [
+        "NOOP: scale_duration {'op': 'scale_duration', 'action_substr': 'cook_ingredient_in_preheated', 'factor': 3.0}",
+        "NOOP: scale_duration {'op': 'scale_duration', 'action_substr': 'microwave_ingredient_safe', 'factor': 2.0}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_temporal_long_plate",
+    "domain": "out_adv_extended/ext_temporal_long_plate_domain.pddl",
+    "problem": "out_adv_extended/ext_temporal_long_plate_problem.pddl",
+    "log": [
+      [
+        "NOOP: scale_duration {'op': 'scale_duration', 'action_substr': 'plate', 'absolute': 8}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_neutralize_damage_all",
+    "domain": "out_adv_extended/ext_neutralize_damage_all_domain.pddl",
+    "problem": "out_adv_extended/ext_neutralize_damage_all_problem.pddl",
+    "log": [
+      [
+        "OK: neutralize_damage {'op': 'neutralize_damage'}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_neutralize_plus_blind_crack",
+    "domain": "out_adv_extended/ext_neutralize_plus_blind_crack_domain.pddl",
+    "problem": "out_adv_extended/ext_neutralize_plus_blind_crack_problem.pddl",
+    "log": [
+      [
+        "OK: neutralize_damage {'op': 'neutralize_damage', 'extra_predicates': ['blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_budget_heat_flow",
+    "domain": "out_adv_extended/ext_budget_heat_flow_domain.pddl",
+    "problem": "out_adv_extended/ext_budget_heat_flow_problem.pddl",
+    "log": [
+      [
+        "OK: ensure_budget {'op': 'ensure_budget', 'name': 'battery', 'init': 6}",
+        "OK: decrease_budget_on {'op': 'decrease_budget_on', 'name': 'battery', 'action_substr': 'preheat_pan', 'amount': 2}",
+        "OK: decrease_budget_on {'op': 'decrease_budget_on', 'name': 'battery', 'action_substr': 'cook_ingredient_in_preheated', 'amount': 3}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_budget_verify_vs_open",
+    "domain": "out_adv_extended/ext_budget_verify_vs_open_domain.pddl",
+    "problem": "out_adv_extended/ext_budget_verify_vs_open_problem.pddl",
+    "log": [
+      [
+        "OK: ensure_budget {'op': 'ensure_budget', 'name': 'budget', 'init': 4}",
+        "OK: decrease_budget_on {'op': 'decrease_budget_on', 'name': 'budget', 'action_substr': 'verify_is_raw_egg', 'amount': 2}",
+        "OK: decrease_budget_on {'op': 'decrease_budget_on', 'name': 'budget', 'action_substr': 'open_can', 'amount': 3}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_mix_temporal_plus_spike",
+    "domain": "out_adv_extended/ext_mix_temporal_plus_spike_domain.pddl",
+    "problem": "out_adv_extended/ext_mix_temporal_plus_spike_problem.pddl",
+    "log": [
+      [
+        "NOOP: scale_duration {'op': 'scale_duration', 'action_substr': 'cook_ingredient_in_preheated', 'factor': 2.5}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 120}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "ext_mix_neutralize_plus_type_swap",
+    "domain": "out_adv_extended/ext_mix_neutralize_plus_type_swap_domain.pddl",
+    "problem": "out_adv_extended/ext_mix_neutralize_plus_type_swap_problem.pddl",
+    "log": [
+      [
+        "OK: neutralize_damage {'op': 'neutralize_damage'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg', 'boiled_egg1': 'raw_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  }
+]

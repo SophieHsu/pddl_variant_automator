@@ -1,0 +1,745 @@
+[
+  {
+    "name": "adv_spike_01_light_add_topping_8",
+    "domain": "out_adv_compatible/adv_spike_01_light_add_topping_8_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_01_light_add_topping_8_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'add_topping', 'K': 8}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_02_medium_crack_egg_thinks_raw_is_raw_30",
+    "domain": "out_adv_compatible/adv_spike_02_medium_crack_egg_thinks_raw_is_raw_30_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_02_medium_crack_egg_thinks_raw_is_raw_30_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 30}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_03_medium_clean_container_harsh_safe_100",
+    "domain": "out_adv_compatible/adv_spike_03_medium_clean_container_harsh_safe_100_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_03_medium_clean_container_harsh_safe_100_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_safe', 'K': 100}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_04_hard_crack_egg_boiled_2500",
+    "domain": "out_adv_compatible/adv_spike_04_hard_crack_egg_boiled_2500_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_04_hard_crack_egg_boiled_2500_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_boiled', 'K': 2500}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_05_medium_crack_egg_thinks_raw_is_boiled_30",
+    "domain": "out_adv_compatible/adv_spike_05_medium_crack_egg_thinks_raw_is_boiled_30_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_05_medium_crack_egg_thinks_raw_is_boiled_30_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 30}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_06_hard_crack_egg_thinks_boiled_is_boiled_200",
+    "domain": "out_adv_compatible/adv_spike_06_hard_crack_egg_thinks_boiled_is_boiled_200_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_06_hard_crack_egg_thinks_boiled_is_boiled_200_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_boiled', 'K': 200}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_07_light_clean_container_harsh_damaging_10",
+    "domain": "out_adv_compatible/adv_spike_07_light_clean_container_harsh_damaging_10_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_07_light_clean_container_harsh_damaging_10_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_08_hard_clean_container_soft_2500",
+    "domain": "out_adv_compatible/adv_spike_08_hard_clean_container_soft_2500_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_08_hard_clean_container_soft_2500_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 2500}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_09_light_cook_ingredient_in_non_preheated_15",
+    "domain": "out_adv_compatible/adv_spike_09_light_cook_ingredient_in_non_preheated_15_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_09_light_cook_ingredient_in_non_preheated_15_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'cook_ingredient_in_non_preheated', 'K': 15}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_10_light_cook_ingredient_in_preheated_18",
+    "domain": "out_adv_compatible/adv_spike_10_light_cook_ingredient_in_preheated_18_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_10_light_cook_ingredient_in_preheated_18_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'cook_ingredient_in_preheated', 'K': 18}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_11_hard_serve_milk_blind_fresh_1500",
+    "domain": "out_adv_compatible/adv_spike_11_hard_serve_milk_blind_fresh_1500_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_11_hard_serve_milk_blind_fresh_1500_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'serve_milk_blind_fresh', 'K': 1500}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_12_light_plate_12",
+    "domain": "out_adv_compatible/adv_spike_12_light_plate_12_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_12_light_plate_12_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'plate', 'K': 12}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_13_medium_transfer_ingredient_40",
+    "domain": "out_adv_compatible/adv_spike_13_medium_transfer_ingredient_40_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_13_medium_transfer_ingredient_40_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'transfer_ingredient', 'K': 40}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_14_medium_verify_is_boiled_egg_75",
+    "domain": "out_adv_compatible/adv_spike_14_medium_verify_is_boiled_egg_75_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_14_medium_verify_is_boiled_egg_75_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg', 'K': 75}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_spike_15_light_microwave_ingredient_safe_18",
+    "domain": "out_adv_compatible/adv_spike_15_light_microwave_ingredient_safe_18_domain.pddl",
+    "problem": "out_adv_compatible/adv_spike_15_light_microwave_ingredient_safe_18_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'microwave_ingredient_safe', 'K': 18}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_01_verify_is_boiled_egg_30_dump_can_to_50",
+    "domain": "out_adv_compatible/adv_multi_spike_01_verify_is_boiled_egg_30_dump_can_to_50_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_01_verify_is_boiled_egg_30_dump_can_to_50_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg', 'K': 30}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'dump_can_to', 'K': 50}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_02_crack_egg_thinks_boiled_is_boiled_40_crack_egg_boiled_400",
+    "domain": "out_adv_compatible/adv_multi_spike_02_crack_egg_thinks_boiled_is_boiled_40_crack_egg_boiled_400_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_02_crack_egg_thinks_boiled_is_boiled_40_crack_egg_boiled_400_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_boiled', 'K': 40}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_boiled', 'K': 400}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_03_beat_egg_40_microwave_ingredient_unsafe_200",
+    "domain": "out_adv_compatible/adv_multi_spike_03_beat_egg_40_microwave_ingredient_unsafe_200_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_03_beat_egg_40_microwave_ingredient_unsafe_200_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'beat_egg', 'K': 40}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'microwave_ingredient_unsafe', 'K': 200}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_04_season_egg_with_sugar_100_plate_50",
+    "domain": "out_adv_compatible/adv_multi_spike_04_season_egg_with_sugar_100_plate_50_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_04_season_egg_with_sugar_100_plate_50_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'season_egg_with_sugar', 'K': 100}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'plate', 'K': 50}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_05_crack_egg_thinks_raw_is_raw_30_dispose_ingredient_30",
+    "domain": "out_adv_compatible/adv_multi_spike_05_crack_egg_thinks_raw_is_raw_30_dispose_ingredient_30_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_05_crack_egg_thinks_raw_is_raw_30_dispose_ingredient_30_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 30}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'dispose_ingredient', 'K': 30}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_06_microwave_ingredient_unsafe_60_season_egg_blind_salt_100",
+    "domain": "out_adv_compatible/adv_multi_spike_06_microwave_ingredient_unsafe_60_season_egg_blind_salt_100_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_06_microwave_ingredient_unsafe_60_season_egg_blind_salt_100_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'microwave_ingredient_unsafe', 'K': 60}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'season_egg_blind_salt', 'K': 100}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_07_clean_container_soft_30_serve_milk_blind_fresh_1000",
+    "domain": "out_adv_compatible/adv_multi_spike_07_clean_container_soft_30_serve_milk_blind_fresh_1000_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_07_clean_container_soft_30_serve_milk_blind_fresh_1000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 30}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'serve_milk_blind_fresh', 'K': 1000}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_multi_spike_08_season_egg_with_salt_100_clean_container_harsh_damaging_400",
+    "domain": "out_adv_compatible/adv_multi_spike_08_season_egg_with_salt_100_clean_container_harsh_damaging_400_domain.pddl",
+    "problem": "out_adv_compatible/adv_multi_spike_08_season_egg_with_salt_100_clean_container_harsh_damaging_400_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'season_egg_with_salt', 'K': 100}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 400}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_01_undamaged",
+    "domain": "out_adv_compatible/adv_hazoff_01_undamaged_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_01_undamaged_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_02_stubborn_sticking",
+    "domain": "out_adv_compatible/adv_hazoff_02_stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_02_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_03_blind_egg_crack",
+    "domain": "out_adv_compatible/adv_hazoff_03_blind_egg_crack_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_03_blind_egg_crack_problem.pddl",
+    "log": [
+      [
+        "NOOP: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_04_damaged",
+    "domain": "out_adv_compatible/adv_hazoff_04_damaged_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_04_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_05_undamaged-stubborn_sticking",
+    "domain": "out_adv_compatible/adv_hazoff_05_undamaged-stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_05_undamaged-stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_06_damaged-stubborn_sticking",
+    "domain": "out_adv_compatible/adv_hazoff_06_damaged-stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_06_damaged-stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged', 'stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_07_undamaged-blind_egg_crack",
+    "domain": "out_adv_compatible/adv_hazoff_07_undamaged-blind_egg_crack_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_07_undamaged-blind_egg_crack_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_08_undamaged-damaged-stubborn_sticking",
+    "domain": "out_adv_compatible/adv_hazoff_08_undamaged-damaged-stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_08_undamaged-damaged-stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'damaged', 'stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_09_undamaged-damaged-stubborn_sticking-blind_egg_crack",
+    "domain": "out_adv_compatible/adv_hazoff_09_undamaged-damaged-stubborn_sticking-blind_egg_crack_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_09_undamaged-damaged-stubborn_sticking-blind_egg_crack_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'damaged', 'stubborn_sticking', 'blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_hazoff_10_stubborn_sticking-blind_egg_crack",
+    "domain": "out_adv_compatible/adv_hazoff_10_stubborn_sticking-blind_egg_crack_domain.pddl",
+    "problem": "out_adv_compatible/adv_hazoff_10_stubborn_sticking-blind_egg_crack_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking', 'blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_01_eggs_swap",
+    "domain": "out_adv_compatible/adv_type_01_eggs_swap_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_01_eggs_swap_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg', 'boiled_egg1': 'raw_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_02_raw_to_boiled_only",
+    "domain": "out_adv_compatible/adv_type_02_raw_to_boiled_only_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_02_raw_to_boiled_only_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_03_boiled_to_raw_only",
+    "domain": "out_adv_compatible/adv_type_03_boiled_to_raw_only_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_03_boiled_to_raw_only_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_04_milk1_fresh",
+    "domain": "out_adv_compatible/adv_type_04_milk1_fresh_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_04_milk1_fresh_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_05_milk2_spoiled",
+    "domain": "out_adv_compatible/adv_type_05_milk2_spoiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_05_milk2_spoiled_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_06_all_milk_fresh",
+    "domain": "out_adv_compatible/adv_type_06_all_milk_fresh_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_06_all_milk_fresh_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk', 'milk2': 'fresh_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_07_all_milk_spoiled",
+    "domain": "out_adv_compatible/adv_type_07_all_milk_spoiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_07_all_milk_spoiled_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'spoiled_milk', 'milk2': 'spoiled_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_08_bowl1_to_plate",
+    "domain": "out_adv_compatible/adv_type_08_bowl1_to_plate_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_08_bowl1_to_plate_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'bowl1': 'plate'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_09_plate1_to_bowl",
+    "domain": "out_adv_compatible/adv_type_09_plate1_to_bowl_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_09_plate1_to_bowl_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'plate1': 'bowl'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_10_swap_bowl_plate",
+    "domain": "out_adv_compatible/adv_type_10_swap_bowl_plate_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_10_swap_bowl_plate_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'bowl1': 'plate', 'plate1': 'bowl'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_11_milk2_fresh_raw_to_boiled",
+    "domain": "out_adv_compatible/adv_type_11_milk2_fresh_raw_to_boiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_11_milk2_fresh_raw_to_boiled_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'fresh_milk', 'raw_egg1': 'boiled_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_type_12_milk1_spoiled_boiled_to_raw",
+    "domain": "out_adv_compatible/adv_type_12_milk1_spoiled_boiled_to_raw_domain.pddl",
+    "problem": "out_adv_compatible/adv_type_12_milk1_spoiled_boiled_to_raw_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'spoiled_milk', 'boiled_egg1': 'raw_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_01_spike_season_egg_blind_sugar_100_haz_stubborn_sticking",
+    "domain": "out_adv_compatible/adv_mix_01_spike_season_egg_blind_sugar_100_haz_stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_01_spike_season_egg_blind_sugar_100_haz_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'season_egg_blind_sugar', 'K': 100}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_02_spike_crack_egg_boiled_250_haz_undamaged-stubborn_sticking",
+    "domain": "out_adv_compatible/adv_mix_02_spike_crack_egg_boiled_250_haz_undamaged-stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_02_spike_crack_egg_boiled_250_haz_undamaged-stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_boiled', 'K': 250}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_03_spike_verify_is_raw_egg_250_haz_undamaged-stubborn_sticking",
+    "domain": "out_adv_compatible/adv_mix_03_spike_verify_is_raw_egg_250_haz_undamaged-stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_03_spike_verify_is_raw_egg_250_haz_undamaged-stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg', 'K': 250}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_04_spike_open_can_60_haz_undamaged-blind_egg_crack",
+    "domain": "out_adv_compatible/adv_mix_04_spike_open_can_60_haz_undamaged-blind_egg_crack_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_04_spike_open_can_60_haz_undamaged-blind_egg_crack_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 60}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_05_spike_preheat_pan_60_haz_damaged",
+    "domain": "out_adv_compatible/adv_mix_05_spike_preheat_pan_60_haz_damaged_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_05_spike_preheat_pan_60_haz_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'preheat_pan', 'K': 60}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_06_spike_open_can_750_haz_undamaged",
+    "domain": "out_adv_compatible/adv_mix_06_spike_open_can_750_haz_undamaged_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_06_spike_open_can_750_haz_undamaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 750}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_07_spike_crack_egg_thinks_boiled_is_boiled_90_haz_undamaged-damaged-stubborn_sticking",
+    "domain": "out_adv_compatible/adv_mix_07_spike_crack_egg_thinks_boiled_is_boiled_90_haz_undamaged-damaged-stubborn_sticking_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_07_spike_crack_egg_thinks_boiled_is_boiled_90_haz_undamaged-damaged-stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_boiled', 'K': 90}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'damaged', 'stubborn_sticking']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_08_spike_serve_milk_blind_spoiled_100_haz_undamaged-damaged-stubborn_sticking-blind_egg_crack",
+    "domain": "out_adv_compatible/adv_mix_08_spike_serve_milk_blind_spoiled_100_haz_undamaged-damaged-stubborn_sticking-blind_egg_crack_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_08_spike_serve_milk_blind_spoiled_100_haz_undamaged-damaged-stubborn_sticking-blind_egg_crack_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'serve_milk_blind_spoiled', 'K': 100}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged', 'damaged', 'stubborn_sticking', 'blind_egg_crack']}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_09_spike_add_topping_60_type_plate1_to_bowl",
+    "domain": "out_adv_compatible/adv_mix_09_spike_add_topping_60_type_plate1_to_bowl_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_09_spike_add_topping_60_type_plate1_to_bowl_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'add_topping', 'K': 60}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'plate1': 'bowl'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_10_spike_crack_egg_raw_100_type_boiled_to_raw_only",
+    "domain": "out_adv_compatible/adv_mix_10_spike_crack_egg_raw_100_type_boiled_to_raw_only_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_10_spike_crack_egg_raw_100_type_boiled_to_raw_only_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 100}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_11_spike_dispose_ingredient_40_type_all_milk_spoiled",
+    "domain": "out_adv_compatible/adv_mix_11_spike_dispose_ingredient_40_type_all_milk_spoiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_11_spike_dispose_ingredient_40_type_all_milk_spoiled_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'dispose_ingredient', 'K': 40}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'spoiled_milk', 'milk2': 'spoiled_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_12_spike_season_egg_blind_salt_60_type_all_milk_spoiled",
+    "domain": "out_adv_compatible/adv_mix_12_spike_season_egg_blind_salt_60_type_all_milk_spoiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_12_spike_season_egg_blind_salt_60_type_all_milk_spoiled_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'season_egg_blind_salt', 'K': 60}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'spoiled_milk', 'milk2': 'spoiled_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_13_spike_open_can_75_type_milk2_spoiled",
+    "domain": "out_adv_compatible/adv_mix_13_spike_open_can_75_type_milk2_spoiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_13_spike_open_can_75_type_milk2_spoiled_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 75}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_14_spike_crack_egg_thinks_raw_is_boiled_60_type_eggs_swap",
+    "domain": "out_adv_compatible/adv_mix_14_spike_crack_egg_thinks_raw_is_boiled_60_type_eggs_swap_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_14_spike_crack_egg_thinks_raw_is_boiled_60_type_eggs_swap_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 60}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg', 'boiled_egg1': 'raw_egg'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "adv_mix_15_spike_cook_ingredient_in_preheated_40_type_all_milk_spoiled",
+    "domain": "out_adv_compatible/adv_mix_15_spike_cook_ingredient_in_preheated_40_type_all_milk_spoiled_domain.pddl",
+    "problem": "out_adv_compatible/adv_mix_15_spike_cook_ingredient_in_preheated_40_type_all_milk_spoiled_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'cook_ingredient_in_preheated', 'K': 40}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'spoiled_milk', 'milk2': 'spoiled_milk'}}",
+        "OK: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  }
+]

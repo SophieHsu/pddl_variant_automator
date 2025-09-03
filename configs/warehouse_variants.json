@@ -1,0 +1,120 @@
+{
+  "variants": [
+    {
+      "name": "wh_spike_scan_and_label",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "scan_item_safe",
+          "K": 120
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "print_and_attach_label",
+          "K": 90
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "wh_spike_pallet_wrap",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "palletize_bin",
+          "K": 120
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wrap_pallet",
+          "K": 140
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "wh_spike_clear_aisle",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "clear_aisle",
+          "K": 100
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "wh_hazoff_noblind_and_damage",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pick",
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "wh_hazoff_labeled",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "labeled"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "wh_mix_spike_scan_remove_undamaged",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "scan_item_safe",
+          "K": 150
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "wh_mix_spike_wrap_remove_noblind",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "wrap_pallet",
+          "K": 150
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pick"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

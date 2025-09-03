@@ -1,0 +1,135 @@
+{
+  "variants": [
+    {
+      "name": "camp_spike_permit_and_drive",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "buy_permit",
+          "K": 120
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "drive_to_site",
+          "K": 200
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_spike_pitch_and_cook",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "pitch_tent",
+          "K": 80
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cook_meal",
+          "K": 90
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_hazoff_blind_and_bear",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pack",
+            "bear-safe"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_hazoff_fireout",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "fire-out"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_type_flashlight_generic",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "flashlight1": "gear"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_type_firstaid_generic",
+      "transforms": [
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "firstaid1": "gear"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_mix_spike_permit_hazoff_fire",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "buy_permit",
+          "K": 150
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "fire-out"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "camp_mix_spike_cook_hazoff_noblind",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "cook_meal",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-blind-pack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}

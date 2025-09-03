@@ -1,0 +1,115 @@
+{
+  "variants": [
+    {
+      "name": "cln_spike_vacuum_and_trash",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "vacuum_room",
+          "K": 90
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "take_out_trash",
+          "K": 70
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "cln_spike_mop_mild",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "mop_mild",
+          "K": 100
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "cln_spike_airfreshener",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "spray_airfreshener",
+          "K": 60
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "cln_hazoff_no_harsh_and_damage",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-harsh-chem",
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "cln_hazoff_sanitized",
+      "transforms": [
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "sanitized"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "cln_mix_spike_mild_remove_undamaged",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "mop_mild",
+          "K": 120
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "undamaged"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "cln_mix_spike_vacuum_remove_noharsh",
+      "transforms": [
+        {
+          "op": "add_cost_spike",
+          "action_substr": "vacuum_room",
+          "K": 80
+        },
+        {
+          "op": "remove_effect_predicates",
+          "predicates": [
+            "no-harsh-chem"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    }
+  ]
+}
