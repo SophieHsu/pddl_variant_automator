@@ -1,0 +1,60 @@
+{
+    "variants": [
+    {  
+    "name": "ext_budget_heat_flow",
+    "transforms": [
+      {
+        "op": "ensure_budget",
+        "name": "battery",
+        "init": 6
+      },
+      {
+        "op": "decrease_budget_on",
+        "name": "battery",
+        "action_substr": "preheat_pan",
+        "amount": 2
+      },
+      {
+        "op": "decrease_budget_on",
+        "name": "battery",
+        "action_substr": "cook_ingredient_in_preheated",
+        "amount": 3
+      },
+      {
+        "op": "ensure_metric"
+      }
+    ],
+    "labels": {
+      "expected": "subset_due_to_budget"
+    }
+  },
+  {
+    "name": "ext_budget_verify_vs_open",
+    "transforms": [
+      {
+        "op": "ensure_budget",
+        "name": "budget",
+        "init": 4
+      },
+      {
+        "op": "decrease_budget_on",
+        "name": "budget",
+        "action_substr": "verify_is_raw_egg",
+        "amount": 2
+      },
+      {
+        "op": "decrease_budget_on",
+        "name": "budget",
+        "action_substr": "open_can",
+        "amount": 3
+      },
+      {
+        "op": "ensure_metric"
+      }
+    ],
+    "labels": {
+        "expected": "choose_between_paths"
+    }
+  }
+] 
+}

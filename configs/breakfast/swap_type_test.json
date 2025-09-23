@@ -1,0 +1,226 @@
+{
+    "variants": [
+        {
+        "name": "adv_type_01_eggs_swap",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "raw_egg1": "boiled_egg",
+                "boiled_egg1": "raw_egg"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "eggs_swap"
+        }
+        },
+        {
+        "name": "adv_type_02_raw_to_boiled_only",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "raw_egg1": "boiled_egg"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "raw_to_boiled_only"
+        }
+        },
+        {
+        "name": "adv_type_03_boiled_to_raw_only",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "boiled_egg1": "raw_egg"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "boiled_to_raw_only"
+        }
+        },
+        {
+        "name": "adv_type_04_milk1_fresh",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "milk1": "fresh_milk"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "milk1_fresh"
+        }
+        },
+        {
+        "name": "adv_type_05_milk2_spoiled",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "milk2": "spoiled_milk"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "milk2_spoiled"
+        }
+        },
+        {
+        "name": "adv_type_06_all_milk_fresh",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "milk1": "fresh_milk",
+                "milk2": "fresh_milk"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "all_milk_fresh"
+        }
+        },
+        {
+        "name": "adv_type_07_all_milk_spoiled",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "milk1": "spoiled_milk",
+                "milk2": "spoiled_milk"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "all_milk_spoiled"
+        }
+        },
+        {
+        "name": "adv_type_08_bowl1_to_plate",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "bowl1": "plate"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "bowl1_to_plate"
+        }
+        },
+        {
+        "name": "adv_type_09_plate1_to_bowl",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "plate1": "bowl"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "plate1_to_bowl"
+        }
+        },
+        {
+        "name": "adv_type_10_swap_bowl_plate",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "bowl1": "plate",
+                "plate1": "bowl"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "swap_bowl_plate"
+        }
+        },
+        {
+        "name": "adv_type_11_milk2_fresh_raw_to_boiled",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "milk2": "fresh_milk",
+                "raw_egg1": "boiled_egg"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "milk2_fresh_raw_to_boiled"
+        }
+        },
+        {
+        "name": "adv_type_12_milk1_spoiled_boiled_to_raw",
+        "transforms": [
+            {
+            "op": "swap_object_types",
+            "renames": {
+                "milk1": "spoiled_milk",
+                "boiled_egg1": "raw_egg"
+            }
+            },
+            {
+            "op": "ensure_metric"
+            }
+        ],
+        "labels": {
+            "mechanism": "type_swap",
+            "tag": "milk1_spoiled_boiled_to_raw"
+        }
+        }
+    ]
+  }

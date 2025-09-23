@@ -158,33 +158,88 @@ def _write_typed_object_blocks(groups: List[Tuple[List[str], str]]) -> List[str]
     return out
 
 def swap_object_types(problem_ast: List, renames: Dict[str, str]) -> bool:
-    """Change the declared type of specific objects in :objects. renames: {obj_name: new_type}."""
     define = _find_define_block(problem_ast)
-    if not define: return False
-    # find (:objects ...)
-    for i,node in enumerate(define):
+    if not define:
+        return False
+
+    # --- 1) rewrite :objects, recording old->new per object
+    changed = False
+    changed_objs = {}  # obj -> (old_type, new_type)
+
+    for i, node in enumerate(define):
         if isinstance(node, list) and node and node[0] == ':objects':
-            # node looks like [':objects', ...typed tokens...]
             flat = node[1:]
-            # Flatten nested lists just in case
             tokens = []
             for x in flat:
-                if isinstance(x, list): tokens.extend(x)
-                else: tokens.append(x)
+                tokens.extend(x) if isinstance(x, list) else tokens.append(x)
+
             groups = _read_typed_object_blocks(tokens)
-            changed = False
-            for idx,(names, typ) in enumerate(groups):
+
+            for idx, (names, typ) in enumerate(groups):
                 new_names = []
+                cur_typ = typ
                 for nm in names:
                     if nm in renames:
-                        typ = renames[nm]
+                        # record the old type before changing
+                        changed_objs[nm] = (cur_typ, renames[nm])
+                        cur_typ = renames[nm]
                         changed = True
                     new_names.append(nm)
-                groups[idx] = (new_names, typ)
+                groups[idx] = (new_names, cur_typ)
+
             if changed:
                 define[i] = [':objects'] + _write_typed_object_blocks(groups)
-                return True
-    return False
+            break  # only one :objects
+
+    if not changed:
+        return False
+
+    # --- 2) reconcile :init unary "is_<type>" (and drop contradictions)
+    init = _find_section(define, ':init')
+    if init is None:
+        return True  # no facts to fix
+
+    def is_unary_is_type_fact(lit):
+        return (isinstance(lit, list) and len(lit) == 2 and isinstance(lit[0], str)
+                and lit[0].startswith('is_') and isinstance(lit[1], str))
+
+    # Build a quick index of facts per object
+    new_inits = [init[0]]
+    for lit in init[1:]:
+        if not is_unary_is_type_fact(lit):
+            new_inits.append(lit)
+            continue
+
+        pred, obj = lit[0], lit[1]
+        if obj not in changed_objs:
+            new_inits.append(lit)
+            continue
+
+        old_type, new_type = changed_objs[obj]
+        want_pred = f'is_{new_type}'
+        drop_pred = f'is_{old_type}'
+
+        # If this literal is the old predicate, skip it (we'll insert the new one later).
+        if pred == drop_pred:
+            continue
+        # If it's already the right predicate, keep it.
+        if pred == want_pred:
+            new_inits.append(lit)
+            continue
+        # Some other "is_*" fact about the same object: keep as-is
+        new_inits.append(lit)
+
+    # Ensure each renamed object has the correct "is_<new_type>" fact present once.
+    existing = {(lit[0], lit[1]) for lit in new_inits[1:]
+                if isinstance(lit, list) and len(lit) == 2}
+    for obj, (old_t, new_t) in changed_objs.items():
+        pred = f'is_{new_t}'
+        if (pred, obj) not in existing:
+            new_inits.append([pred, obj])
+
+    # write back
+    init[:] = new_inits
+    return True
 
 def ensure_metric_has_total_cost(problem_ast: List) -> bool:
     """Ensure problem has a metric minimizing total-cost (or adds it to a sum)."""
@@ -218,13 +273,31 @@ def _ensure_functions_section(define_block: List) -> List:
 
 def ensure_numeric_fluent(domain_ast: List, name: str) -> bool:
     define = _find_define_block(domain_ast)
-    if not define: return False
+    if not define: 
+        return False
+    changed = False
+
+    # Ensure :requirements includes :fluents (numeric preconditions/tests)
+    req = _find_section(define, ':requirements')
+    if req is None:
+        # create a requirements block with :fluents while preserving nothing else
+        # (safe: we are not removing existing reqs)
+        req = [':requirements', ':fluents']
+        # insert early (after domain name if possible)
+        define.insert(1, req)
+        changed = True
+    else:
+        if ':fluents' not in req[1:]:
+            req.append(':fluents')
+            changed = True
+
+    # Ensure (:functions (name)) exists
     funcs = _ensure_functions_section(define)
-    # Add (name) if not present
     if not any(isinstance(x, list) and x and x[0] == name for x in funcs[1:]):
         funcs.append([name])
-        return True
-    return False
+        changed = True
+
+    return changed
 
 def ensure_init_numeric(problem_ast: List, name: str, value: int) -> bool:
     define = _find_define_block(problem_ast)
@@ -246,9 +319,25 @@ def decrease_fluent_on(domain_ast: List, action_name_substr: str, name: str, amo
     if not define: return False
     found = _find_action_by_name(define, action_name_substr)
     if not found: return False
-    action_list, _, _ = found
+    action_list, _, kind = found
+
+    # 1) add the decrease effect (your existing behavior)
     eff = _get_or_create_effect_list(action_list)
     eff.append(['decrease', [name], str(int(amount))])
+
+    # 2) ADD the GUARD into the EXISTING pre/condition (merge, don't add a second block)
+    amt = str(int(amount))
+    if kind == ':durative-action':
+        cond = _get_or_create_condition_list(action_list)
+        guard = ['at', 'start', ['>=', [name], amt]]
+        if not _contains_clause(cond[1], guard):
+            cond[1].append(guard)
+    else:
+        pre = _get_or_create_precondition_list(action_list)
+        guard = ['>=', [name], amt]
+        if not _contains_clause(pre[1], guard):
+            pre[1].append(guard)
+
     return True
 
 def scale_duration(domain_ast: List, action_name_substr: str, factor: float = 2.0, absolute: int = None) -> bool:
@@ -281,6 +370,56 @@ def scale_duration(domain_ast: List, action_name_substr: str, factor: float = 2.
         absolute = 2
     action_list.extend([':duration', ['=', '?duration', str(int(absolute))]])
     return True
+def _get_or_create_precondition_list(action_list):
+    # Return a pair [':precondition', <AND-LIST>], where <AND-LIST> is the same object
+    # that lives as the *value* for the ':precondition' key inside action_list.
+    i = 0
+    while i < len(action_list):
+        if action_list[i] == ':precondition':
+            # ensure value exists and is (and ...)
+            if i+1 >= len(action_list):
+                action_list.append(['and'])
+                return [':precondition', action_list[-1]]
+            val = action_list[i+1]
+            if isinstance(val, list):
+                if not (val and val[0] == 'and'):
+                    action_list[i+1] = ['and', val]
+                return [':precondition', action_list[i+1]]
+            else:
+                action_list[i+1] = ['and', val]
+                return [':precondition', action_list[i+1]]
+        i += 1
+    # not found → create key–value pair
+    action_list.extend([':precondition', ['and']])
+    return [':precondition', action_list[-1]]
+
+def _get_or_create_condition_list(action_list):
+    # Same pattern for duratives’ :condition
+    i = 0
+    while i < len(action_list):
+        if action_list[i] == ':condition':
+            if i+1 >= len(action_list):
+                action_list.append(['and'])
+                return [':condition', action_list[-1]]
+            val = action_list[i+1]
+            if isinstance(val, list):
+                if not (val and val[0] == 'and'):
+                    action_list[i+1] = ['and', val]
+                return [':condition', action_list[i+1]]
+            else:
+                action_list[i+1] = ['and', val]
+                return [':condition', action_list[i+1]]
+        i += 1
+    action_list.extend([':condition', ['and']])
+    return [':condition', action_list[-1]]
+
+def _contains_clause(root_list, clause):
+    # shallow structural check to avoid duplicates
+    if root_list == clause:
+        return True
+    if isinstance(root_list, list):
+        return any(_contains_clause(x, clause) for x in root_list if isinstance(x, list))
+    return False
 
 def neutralize_damage(domain_ast: List, extra_predicates: List[str] = None) -> int:
     base = ["damaged", "undamaged", "stubborn_sticking"]

@@ -55,30 +55,12 @@
       }
     },
     {
-      "name": "adv_spike_04_hard_crack_egg_boiled_2500",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "crack_egg_boiled",
-          "K": 2500
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "hard",
-        "action": "crack_egg_boiled"
-      }
-    },
-    {
-      "name": "adv_spike_05_medium_crack_egg_thinks_raw_is_boiled_30",
+      "name": "adv_spike_05_medium_crack_egg_thinks_raw_is_boiled_100",
       "transforms": [
         {
           "op": "add_cost_spike",
           "action_substr": "crack_egg_thinks_raw_is_boiled",
-          "K": 30
+          "K": 100
         },
         {
           "op": "ensure_metric"
@@ -91,30 +73,12 @@
       }
     },
     {
-      "name": "adv_spike_06_hard_crack_egg_thinks_boiled_is_boiled_200",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "crack_egg_thinks_boiled_is_boiled",
-          "K": 200
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "hard",
-        "action": "crack_egg_thinks_boiled_is_boiled"
-      }
-    },
-    {
-      "name": "adv_spike_07_light_clean_container_harsh_damaging_10",
+      "name": "adv_spike_07_light_clean_container_harsh_damaging_1000",
       "transforms": [
         {
           "op": "add_cost_spike",
           "action_substr": "clean_container_harsh_damaging",
-          "K": 10
+          "K": 1000
         },
         {
           "op": "ensure_metric"
@@ -127,30 +91,12 @@
       }
     },
     {
-      "name": "adv_spike_08_hard_clean_container_soft_2500",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "clean_container_soft",
-          "K": 2500
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "hard",
-        "action": "clean_container_soft"
-      }
-    },
-    {
-      "name": "adv_spike_09_light_cook_ingredient_in_non_preheated_15",
+      "name": "adv_spike_09_light_cook_ingredient_in_non_preheated_100",
       "transforms": [
         {
           "op": "add_cost_spike",
           "action_substr": "cook_ingredient_in_non_preheated",
-          "K": 15
+          "K": 100
         },
         {
           "op": "ensure_metric"
@@ -160,78 +106,6 @@
         "mechanism": "cost_spike",
         "band": "light",
         "action": "cook_ingredient_in_non_preheated"
-      }
-    },
-    {
-      "name": "adv_spike_10_light_cook_ingredient_in_preheated_18",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "cook_ingredient_in_preheated",
-          "K": 18
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "light",
-        "action": "cook_ingredient_in_preheated"
-      }
-    },
-    {
-      "name": "adv_spike_11_hard_serve_milk_blind_fresh_1500",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "serve_milk_blind_fresh",
-          "K": 1500
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "hard",
-        "action": "serve_milk_blind_fresh"
-      }
-    },
-    {
-      "name": "adv_spike_12_light_plate_12",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "plate",
-          "K": 12
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "light",
-        "action": "plate"
-      }
-    },
-    {
-      "name": "adv_spike_13_medium_transfer_ingredient_40",
-      "transforms": [
-        {
-          "op": "add_cost_spike",
-          "action_substr": "transfer_ingredient",
-          "K": 40
-        },
-        {
-          "op": "ensure_metric"
-        }
-      ],
-      "labels": {
-        "mechanism": "cost_spike",
-        "band": "medium",
-        "action": "transfer_ingredient"
       }
     },
     {
@@ -546,7 +420,8 @@
       "labels": {
         "mechanism": "hazard_off",
         "predicates": [
-          "damaged"
+          "damaged",
+          "undamaged"
         ]
       }
     },
@@ -1296,6 +1171,166 @@
           "type_swap"
         ]
       }
+    },
+    {
+      "name": "ext_temporal_squeeze_cook_vs_microwave",
+      "transforms": [
+        {
+          "op": "scale_duration",
+          "action_substr": "cook_ingredient_in_preheated",
+          "factor": 3.0
+        },
+        {
+          "op": "scale_duration",
+          "action_substr": "microwave_ingredient_safe",
+          "factor": 2.0
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "drop_one_time_conflict"
+      }
+    },
+    {
+      "name": "ext_temporal_long_plate",
+      "transforms": [
+        {
+          "op": "scale_duration",
+          "action_substr": "plate",
+          "absolute": 8
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "reorder_or_violate"
+      }
+    },
+    {
+      "name": "ext_neutralize_damage_all",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "safety_prefs_trivial"
+      }
+    },
+    {
+      "name": "ext_neutralize_plus_blind_crack",
+      "transforms": [
+        {
+          "op": "neutralize_damage",
+          "extra_predicates": [
+            "blind_egg_crack"
+          ]
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "safety_and_blind_crack_trivial"
+      }
+    },
+    {
+      "name": "ext_budget_heat_flow",
+      "transforms": [
+        {
+          "op": "ensure_budget",
+          "name": "battery",
+          "init": 6
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "battery",
+          "action_substr": "preheat_pan",
+          "amount": 2
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "battery",
+          "action_substr": "cook_ingredient_in_preheated",
+          "amount": 3
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "subset_due_to_budget"
+      }
+    },
+    {
+      "name": "ext_budget_verify_vs_open",
+      "transforms": [
+        {
+          "op": "ensure_budget",
+          "name": "budget",
+          "init": 4
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "budget",
+          "action_substr": "verify_is_raw_egg",
+          "amount": 2
+        },
+        {
+          "op": "decrease_budget_on",
+          "name": "budget",
+          "action_substr": "open_can",
+          "amount": 3
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ],
+      "labels": {
+        "expected": "choose_between_paths"
+      }
+    },
+    {
+      "name": "ext_mix_temporal_plus_spike",
+      "transforms": [
+        {
+          "op": "scale_duration",
+          "action_substr": "cook_ingredient_in_preheated",
+          "factor": 2.5
+        },
+        {
+          "op": "add_cost_spike",
+          "action_substr": "open_can",
+          "K": 120
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
+    },
+    {
+      "name": "ext_mix_neutralize_plus_type_swap",
+      "transforms": [
+        {
+          "op": "neutralize_damage"
+        },
+        {
+          "op": "swap_object_types",
+          "renames": {
+            "raw_egg1": "boiled_egg",
+            "boiled_egg1": "raw_egg"
+          }
+        },
+        {
+          "op": "ensure_metric"
+        }
+      ]
     }
   ]
 }

@@ -31,10 +31,10 @@ def apply_recipe(domain_ast, problem_ast, recipe, verbose=False):
             ok = add_cost_spike(domain_ast, step.get("action_substr",""), int(step.get("K",100000)), bool(step.get("at_end", False)))
         elif op == "remove_effect_predicates":
             ok = remove_effect_predicates(domain_ast, step.get("predicates", [])) > 0
-        elif op == "neutralize_damage":
-            ok = neutralize_damage(domain_ast, step.get("extra_predicates")) > 0
-        elif op == "scale_duration":
-            ok = scale_duration(domain_ast, step.get("action_substr",""), float(step.get("factor",2.0)), step.get("absolute"))
+        # elif op == "neutralize_damage":
+        #     ok = neutralize_damage(domain_ast, step.get("extra_predicates")) > 0
+        # elif op == "scale_duration":
+        #     ok = scale_duration(domain_ast, step.get("action_substr",""), float(step.get("factor",2.0)), step.get("absolute"))
         elif op == "swap_object_types":
             ok = swap_object_types(problem_ast, step.get("renames", {}))
         elif op == "ensure_metric":
