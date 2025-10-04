@@ -59,10 +59,14 @@ def main(args):
 
         cost_spike_actions = metaconf["actions_for_cost_spike"]
         cost_spike_values = metaconf["cost_spike_values"]
+        cost_spike_exclude_actions = metaconf["cost_spike_exclude_actions"]
 
         # if all
         if cost_spike_actions == "all":
             cost_spike_actions = all_action_names
+
+        if len(cost_spike_exclude_actions) > 0:
+            cost_spike_actions = [a for a in cost_spike_actions if a not in cost_spike_exclude_actions]
 
         # generate entries
         for action in cost_spike_actions:
@@ -194,6 +198,20 @@ def main(args):
                         swapped_pairs.append(set(pair))
 
     """
+    Mix Variants
+    """
+    if metaconf["use_mix"]:
+        from itertools import combinations
+        variant_pairs = list(combinations(variants, 2))
+        for v1, v2 in variant_pairs:
+            v1_name = "_".join(v1["name"].split("_")[1:])
+            v2_name = "_".join(v2["name"].split("_")[1:])
+            variants.append({
+                "name": f"{task_name}_mix_{v1_name}_{v2_name}",
+                "transforms": v1["transforms"] + v2["transforms"],
+            })
+
+    """
     Save generated config
     """
     config = {"variants": variants}
@@ -201,12 +219,13 @@ def main(args):
 
     with open(args.savepath, "w") as f:
         json.dump(config, f, **options)
+    print(f"saved {len(variants)} unique variants")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--metaconfig", type=str, help="path to meta config json", default="/home/ayanoh/pddl_variant_automator/configs/metaconfigs/breakfast_meta.json")
-    parser.add_argument("--domain", type=str, help="path to pddl domain file", default="/home/ayanoh/pddl_variant_automator/task_definitions/gt/breakfast_domain.pddl")
-    parser.add_argument("--problem", type=str, help="path to pddl problem file", default="/home/ayanoh/pddl_variant_automator/task_definitions/gt/breakfast_problem.pddl")
+    parser.add_argument("--metaconfig", type=str, help="path to meta config json", default="/home/ayanoh/pddl_variant_automator/configs/metaconfigs/breakfast_v2_meta.json")
+    parser.add_argument("--domain", type=str, help="path to pddl domain file", default="/home/ayanoh/pddl_variant_automator/task_definitions/gt/breakfast_v2_domain.pddl")
+    parser.add_argument("--problem", type=str, help="path to pddl problem file", default="/home/ayanoh/pddl_variant_automator/task_definitions/gt/breakfast_v2_problem.pddl")
     parser.add_argument("--savepath", type=str, help="path to save generated config json", default="test.json")
     args = parser.parse_args()
 

@@ -90,10 +90,11 @@ def main():
             save_text(out_problem, '\n'.join(dumps(x) for x in p2))
             manifest.append({"name": name, "domain": out_domain, "problem": out_problem, "log": log})
             print(f"Wrote {name}:")
-            for line in log: print("  ", line)
+            # for line in log: print("  ", line)
             print("  ->", out_domain)
             print("  ->", out_problem)
-
+        else:
+            print("no change for ", name)
     # Save manifest
     man_path = os.path.join(args.out_dir, "manifest.json")
     json.dump(manifest, open(man_path, 'w', encoding='utf-8'), indent=2)

@@ -1,14 +1,19 @@
 {
-    "task_name": "bk",
+    "task_name": "bkv2",
     
-    "use_cost_spikes": false,
+    "use_cost_spikes": true,
     "use_budget_decrease": false,
-    "use_remove_effects_all": false,
+    "use_remove_effects_all": true,
     "use_remove_effects_single": true,
-    "use_type_swaps": false,
+    "use_type_swaps": true,
+    "use_mix": true,
 
     "actions_for_cost_spike": "all",
     "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": [
+        "skip_verification",
+        "go_to_next_phase"
+    ],
     
     "actions_for_budget_decrease": "all",
     "budget_initial_values": [2],

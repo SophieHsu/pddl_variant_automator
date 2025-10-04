@@ -14,6 +14,7 @@
 
   (:init
     (dirty kitchen)
+    (dirty living)
     (dirty bathroom)
     (unsanitized counter)
     (unsanitized stove)
@@ -23,10 +24,27 @@
     (undamaged sink)
     (trash-full bin1)
 		(= (total-cost) 0)
+    (= (procedure-number) 1)
+    (= (mop-current) 1)
+    (= (vacuum-current) 1)
+
+    ; order of surfaces and room the mop and vacuum actions should handle (1 = first)
+    (= (surface-mop-priority stove) 1)
+    (= (surface-mop-priority counter) 2)
+    (= (surface-mop-priority sink) 3)
+    (= (room-priority living) 1)
+    (= (room-priority bathroom) 2)
+    (= (room-priority kitchen) 3)
+
+    (= (mop-step-priority) 1)
+    (= (vacuum-step-priority) 2)
+    (= (trash-step-priority) 3)
+    (= (airfresh-step-priority) 4)
   )
 
   (:goal (and
     (preference clean-kitchen (clean kitchen))
+    (preference clean-living (clean living))
     (preference clean-bathroom (clean bathroom))
     (preference sanitized-counter (sanitized counter))
     (preference sanitized-stove (sanitized stove))
@@ -46,6 +64,7 @@
     minimize (+
       (total-cost)
       (is-violated clean-kitchen)
+      (is-violated clean-living)
       (is-violated clean-bathroom)
       (is-violated sanitized-counter)
       (is-violated sanitized-stove)

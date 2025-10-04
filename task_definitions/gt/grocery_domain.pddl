@@ -2,12 +2,13 @@
 (define (domain grocery-v1-expert)
   (:requirements :strips :typing :preferences :action-costs)
   (:types
-    person cart bag location item - object
+    person cart location item - object
     store aisle - location
     dairy produce bread - item
   )
 
   (:predicates
+    (at-home)
     (at-store)
     (at-dairy-aisle)
     (at-produce-aisle)
@@ -15,7 +16,7 @@
     (at-cashier)
 
     (in-cart ?i - item ?c - cart)
-    (in-bag ?i - item ?b - bag)
+    (in-bag ?i - item)
 
     (purchased ?i - item)
     (not-purchased ?i - item)
@@ -27,22 +28,40 @@
     (done-shopping)
 
     (used-blind-pick)
-    (reusable-bag-used ?b - bag)
+    (reusable-bag-used)
+    (has-reusable-bag)
 
     (is-dairy-aisle ?a - aisle)
     (is-produce-aisle ?a - aisle)
     (is-bakery-aisle ?a - aisle)
   )
 
-  (:functions (total-cost))
+  (:functions 
+    (total-cost)
+    (item-pickup-priority ?i - item)
+    (item-bagging-priority ?i - item)
+    (current-pickup-priority)
+    (current-bagging-priority)
+)
+
+  (:action bring_reusable_bag
+    :parameters ()
+    :precondition (and 
+      (at-home)
+    )
+    :effect (and 
+      (has-reusable-bag) 
+    )
+  )
 
   (:action go_to_store
     :parameters ()
-    :precondition (and)
+    :precondition (and
+      (at-home)
+    )
     :effect (and
       (at-store)
-      ; (not-done-shopping)
-      ; (increase (total-cost) 0)
+      (not (at-home))
     )
   )
 
@@ -95,9 +114,11 @@
       (not-done-shopping)
       (at-bakery-aisle)
       (fresh ?i)
+      (= (current-pickup-priority) (item-pickup-priority ?i))
     )
     :effect (and 
       (in-cart ?i ?c)
+      (assign (current-pickup-priority) (+ (current-pickup-priority) 1))
     )
   )
 
@@ -108,9 +129,11 @@
       (not-done-shopping)
       (at-produce-aisle)
       (fresh ?i)
+      (= (current-pickup-priority) (item-pickup-priority ?i))
     )
     :effect (and 
       (in-cart ?i ?c)
+      (assign (current-pickup-priority) (+ (current-pickup-priority) 1))
     )
   )
 
@@ -121,9 +144,11 @@
       (not-done-shopping)
       (at-dairy-aisle)
       (fresh ?i)
+      (= (current-pickup-priority) (item-pickup-priority ?i))
     )
     :effect (and 
       (in-cart ?i ?c)
+      (assign (current-pickup-priority) (+ (current-pickup-priority) 1))
     )
   )
 
@@ -133,11 +158,13 @@
       (at-store)
       (not-done-shopping)
       (at-bakery-aisle)
+      (= (current-pickup-priority) (item-pickup-priority ?i))
     )
     :effect (and 
       (in-cart ?i ?c)
       (not (fresh ?i))
       (used-blind-pick)
+      (assign (current-pickup-priority) (+ (current-pickup-priority) 1))
     )
   )
 
@@ -147,11 +174,13 @@
       (at-store)
       (not-done-shopping)
       (at-produce-aisle)
+      (= (current-pickup-priority) (item-pickup-priority ?i))
     )
     :effect (and 
       (in-cart ?i ?c)
       (not (fresh ?i))
       (used-blind-pick)
+      (assign (current-pickup-priority) (+ (current-pickup-priority) 1))
     )
   )
 
@@ -161,11 +190,13 @@
       (at-store)
       (not-done-shopping)
       (at-dairy-aisle)
+      (= (current-pickup-priority) (item-pickup-priority ?i))
     )
     :effect (and 
       (in-cart ?i ?c)
       (not (fresh ?i))
       (used-blind-pick)
+      (assign (current-pickup-priority) (+ (current-pickup-priority) 1))
     )
   )
 
@@ -188,7 +219,8 @@
     :parameters (?i - item)
     :precondition (and
       (at-cashier)
-      (not-purchased ?i)
+      (purchased ?i)
+      (= (current-bagging-priority) (item-bagging-priority ?i))
     )
     :effect (and
       (coupon-applied ?i)
@@ -202,6 +234,7 @@
       (at-cashier)
       (not-purchased ?i)
       (in-cart ?i ?c)
+      (= (current-bagging-priority) (item-bagging-priority ?i))
     )
     :effect (and
       (purchased ?i)
@@ -210,44 +243,69 @@
     )
   )
 
-  (:action bag_safe
-    :parameters (?i - item ?b - bag ?c - cart)
+  (:action bag_safe_reusable
+    :parameters (?i - item ?c - cart)
     :precondition (and 
       (at-store)
       (done-shopping)
       (in-cart ?i ?c)
       (purchased ?i)
+      (has-reusable-bag)
+      (= (current-bagging-priority) (item-bagging-priority ?i))
     )
     :effect (and
-      (in-bag ?i ?b)
-      ; (increase (total-cost) 1)
+      (in-bag ?i)
+      (reusable-bag-used)
+      (assign (current-bagging-priority) (+ (current-bagging-priority) 1))
     )
   )
 
-  (:action bag_toss_risky
-    :parameters (?i - item ?b - bag ?c - cart)
+  (:action bag_toss_risky_reusable
+    :parameters (?i - item ?c - cart)
     :precondition (and 
       (at-store)
       (done-shopping)
       (in-cart ?i ?c)
       (purchased ?i)
+      (has-reusable-bag)
+      (= (current-bagging-priority) (item-bagging-priority ?i))
     )
     :effect (and
-      (in-bag ?i ?b)
+      (in-bag ?i)
       (not (unbroken ?i))
-      ; (increase (total-cost) 0)
+      (reusable-bag-used)
+      (assign (current-bagging-priority) (+ (current-bagging-priority) 1))
     )
   )
 
-  (:action use_reusable_bag
-    :parameters (?b - bag)
-    :precondition (and
-      (at-cashier)
+  (:action bag_safe_single_use
+    :parameters (?i - item ?c - cart)
+    :precondition (and 
+      (at-store)
       (done-shopping)
+      (in-cart ?i ?c)
+      (purchased ?i)
+      (= (current-bagging-priority) (item-bagging-priority ?i))
     )
     :effect (and
-      (reusable-bag-used ?b)
-      ; (increase (total-cost) 0)
+      (in-bag ?i)
+      (assign (current-bagging-priority) (+ (current-bagging-priority) 1))
+    )
+  )
+
+  (:action bag_toss_risky_single_use
+    :parameters (?i - item ?c - cart)
+    :precondition (and 
+      (at-store)
+      (done-shopping)
+      (in-cart ?i ?c)
+      (purchased ?i)
+      (= (current-bagging-priority) (item-bagging-priority ?i))
+    )
+    :effect (and
+      (in-bag ?i)
+      (not (unbroken ?i))
+      (assign (current-bagging-priority) (+ (current-bagging-priority) 1))
     )
   )
 )

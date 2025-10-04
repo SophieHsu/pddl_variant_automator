@@ -6,13 +6,13 @@
     mart - store
     dairy_aisle produce_aisle bakery_aisle - aisle
     cart1 - cart
-    bag1 - bag
     milk - dairy
     eggs - produce
     bread - bread
   )
 
   (:init
+    (at-home)
     (fresh milk)
     (fresh bread)
     (fresh eggs)
@@ -31,7 +31,16 @@
     (is-bakery-aisle bakery_aisle)
     (is-produce-aisle produce_aisle)
     (is-dairy-aisle dairy_aisle)
+
 		(= (total-cost) 0)
+    (= (current-pickup-priority) 1)
+    (= (current-bagging-priority) 1)
+    (= (item-pickup-priority bread) 1)
+    (= (item-pickup-priority eggs) 2)
+    (= (item-pickup-priority milk) 3)
+    (= (item-bagging-priority milk) 1)
+    (= (item-bagging-priority eggs) 2)
+    (= (item-bagging-priority bread) 3)
   )
 
   (:goal (and
@@ -39,13 +48,13 @@
     (preference bread-bought (purchased bread))
     (preference eggs-bought (purchased eggs))
 
-    (preference milk-bagged (in-bag milk bag1))
-    (preference bread-bagged (in-bag bread bag1))
-    (preference eggs-bagged (in-bag eggs bag1))
+    (preference milk-bagged (in-bag milk))
+    (preference bread-bagged (in-bag bread))
+    (preference eggs-bagged (in-bag eggs))
 
     (preference items-fresh (and (fresh milk) (fresh bread) (fresh eggs)))
     (preference coupon-milk (coupon-applied milk))
-    (preference reusable-bag (reusable-bag-used bag1))
+    (preference reusable-bag (reusable-bag-used))
     (preference no-blind-pick-pref (not (used-blind-pick)))
 
     ;; Declared but not penalized

@@ -12,7 +12,7 @@
     stove1 - stove
     fuel1 - fuel
     cooler1 - cooler
-    food1 food2 - food
+    food1 - food
     water1 - water
     firstaid1 - firstaid
     flashlight1 - flashlight
@@ -27,13 +27,27 @@
     (not-in-bag fuel1 bag1)
     (not-in-bag cooler1 bag1)
     (not-in-bag food1 bag1)
-    (not-in-bag food2 bag1)
     (not-in-bag water1 bag1)
     (not-in-bag firstaid1 bag1)
     (not-in-bag flashlight1 bag1)
     (not-in-bag sleepingbag1 bag1)
     (ice-not-in-cooler cooler1)
     (bag-not-loaded bag1)
+
+    ; priorities for preparation
+    (= (priority pm1) 1)
+    (= (priority tent1) 2)
+    (= (priority water1) 3)
+    (= (priority stove1) 4)
+    (= (priority fuel1) 5)
+    (= (priority sleepingbag1) 6)
+    (= (priority firstaid1) 7)
+    (= (priority flashlight1) 8)
+    (= (priority food1) 9)
+    (= (priority cooler1) 10)
+
+    ;; start with the highest priority available
+    (= (next_priority) 1)
 
     ; no permit
     (permits-invalid pm1)
@@ -43,8 +57,8 @@
     (sleepingbag-not-laid sleepingbag1)
     (stove-not-lit stove1)
     (food-uncooked food1)
-    (food-uncooked food2)
 
+    (= (onsite-action-priority) 1)
 		(= (total-cost) 0)
   )
 
@@ -54,7 +68,6 @@
     (preference packed-fuel (in-bag fuel1 bag1))
     (preference packed-cooler (in-bag cooler1 bag1))
     (preference packed-food1 (in-bag food1 bag1))
-    (preference packed-food2 (in-bag food2 bag1))
     (preference packed-water (in-bag water1 bag1))
     (preference packed-firstaid (in-bag firstaid1 bag1))
     (preference packed-flashlight (in-bag flashlight1 bag1))
@@ -69,11 +82,8 @@
     (preference tent-pitched (pitched tent1))
     (preference bag-laid (sleepingbag-laid sleepingbag1))
     (preference food1-cooked (food-cooked food1)) 
-    (preference food2-cooked (food-cooked food2))
     (preference food1-cold (food-cold food1))
-    (preference food2-cold (food-cold food2))
     (preference food1-bear-safe (bear-safe food1))
-    (preference food2-bear-safe (bear-safe food2))
     (preference fire-out-pref (fire-out))
 ))
 
@@ -85,7 +95,6 @@
       (is-violated packed-fuel)
       (is-violated packed-cooler)
       (is-violated packed-food1)
-      (is-violated packed-food2)
       (is-violated packed-water)
       (is-violated packed-firstaid)
       (is-violated packed-flashlight)
@@ -96,11 +105,8 @@
       (is-violated tent-pitched)
       (is-violated bag-laid)
       (is-violated food1-cooked)
-      (is-violated food2-cooked)
       (is-violated food1-cold)
-      (is-violated food2-cold)
       (is-violated food1-bear-safe)
-      (is-violated food2-bear-safe)
       (is-violated fire-out-pref)
     )
   )

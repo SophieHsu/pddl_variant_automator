@@ -33,7 +33,12 @@
     (used-blind-pack)
   )
 
-  (:functions (total-cost))
+  (:functions 
+    (total-cost)
+    (next_priority)
+    (priority ?o - object)
+    (onsite-action-priority)
+  )
 
   ;; --- Prep and packing ---
   (:action pack_unsafe
@@ -42,10 +47,12 @@
       (at-home)
       (not-in-bag ?g ?b)
       (bag-not-loaded ?b)
+      (= (priority ?g) (next_priority))
     )
     :effect (and
       (in-bag ?g ?b)
       (not (not-in-bag ?g ?b))
+      (assign (next_priority) (+ (next_priority) 1))
       (used-blind-pack)
     )
   )
@@ -56,10 +63,12 @@
       (at-home)
       (not-in-bag ?g ?b)
       (bag-not-loaded ?b)
+      (= (priority ?g) (next_priority))
     )
     :effect (and
       (in-bag ?g ?b)
       (not (not-in-bag ?g ?b))
+      (assign (next_priority) (+ (next_priority) 1))
     )
   )
 
@@ -76,10 +85,12 @@
   )
 
   (:action add_ice_to_cooler
-    :parameters (?cl - cooler)
+    :parameters (?cl - cooler ?b - bag)
     :precondition (and
       (at-home)
       (ice-not-in-cooler ?cl)
+      (in-bag ?cl ?b)
+      (bag-not-loaded ?b)
     )
     :effect (and
       (ice-in-cooler ?cl)
@@ -100,17 +111,22 @@
 
   (:action buy_permit
     :parameters (?pm - permit)
-    :precondition (permits-invalid ?pm)
+    :precondition (and
+      (permits-invalid ?pm)
+      (= (priority ?pm) (next_priority))
+    )
     :effect (and
       (permits-valid ?pm)
       (not (permits-invalid ?pm))
+      (assign (next_priority) (+ (next_priority) 1))
     )
   )
 
   (:action drive_to_site
-    :parameters (?c - car ?s - site)
+    :parameters (?c - car ?s - site ?b - bag)
     :precondition (and
       (at-home)
+      (bag-loaded ?b)
     )
     :effect (and
       (at-site)
@@ -123,6 +139,7 @@
     :parameters (?t - tent ?b - bag)
     :precondition (and
       (at-site)
+      (= (onsite-action-priority) 3)
       (in-bag ?t ?b)
       (bag-loaded ?b)
       (unpitched ?t)
@@ -130,6 +147,7 @@
     :effect (and
       (pitched ?t)
       (not (unpitched ?t))
+      (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
     )
   )
 
@@ -140,10 +158,12 @@
       (in-bag ?sb ?b)
       (bag-loaded ?b)
       (sleepingbag-not-laid ?sb)
+      (= (onsite-action-priority) 4)
     )
     :effect (and
       (sleepingbag-laid ?sb)
       (not (sleepingbag-not-laid ?sb))
+      (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
     )
   )
 
@@ -151,6 +171,7 @@
     :parameters (?st - stove ?b - bag ?fu - fuel)
     :precondition (and
       (at-site)
+      (= (onsite-action-priority) 1)
       (in-bag ?st ?b)
       (bag-loaded ?b)
       (stove-not-lit ?st)
@@ -158,12 +179,14 @@
     :effect (and
       (stove-lit ?st)
       (not (stove-not-lit ?st))
+      (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
     )
   )
 
   (:action cook_meal
     :parameters (?b - bag ?f - food ?st - stove)
     :precondition (and
+      (= (onsite-action-priority) 5)
       (stove-lit ?st)
       (in-bag ?f ?b)
       (bag-loaded ?b)
@@ -172,18 +195,22 @@
     :effect (and
       (food-cooked ?f)
       (not (food-uncooked ?f))
+      (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
     )
   )
 
   (:action store_food_bear_safe
-    :parameters (?b - bag ?f - food)
+    :parameters (?b - bag ?f - food ?st - stove)
     :precondition (and
       (at-site)
+      (= (onsite-action-priority) 2)
       (in-bag ?f ?b)
       (bag-loaded ?b)
+      (stove-lit ?st)
     )
     :effect (and
       (bear-safe ?f)
+      (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
     )
   )
 
@@ -191,11 +218,33 @@
     :parameters (?st - stove)
     :precondition (and 
       (stove-lit ?st)
+      (= (onsite-action-priority) 6)
     )
     :effect (and
       (not (stove-lit ?st))
       (stove-not-lit ?st)
       (fire-out)
+      (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
     )
+  )
+)
+
+(:action decrement_priority
+  :parameters ()
+  :precondition (and 
+    (> (next_priority) 1)
+  )
+  :effect (and 
+    (assign (next_priority) (+ (next_priority) 1))
+  )
+)
+
+(:action skip_onsite_step
+  :parameters ()
+  :precondition (and 
+    (< (onsite-action-priority) 5)
+  )
+  :effect (and 
+    (assign (onsite-action-priority) (+ (onsite-action-priority) 1))
   )
 )
