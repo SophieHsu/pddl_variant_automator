@@ -18,15 +18,20 @@
   )
 
   (:init
+    ;; Garments start in hamper
     (in-hamper jeans1)
     (in-hamper hoodie1)
     (in-hamper blouse1)
     (in-hamper tshirt1)
 
+    ;; Classification (exclusive sorting)
+    (is-dark jeans1)
+    (is-dark hoodie1)
     (delicate blouse1)
-    (stained blouse1)
+    (is-light tshirt1)
 
-    ;; Pocket hazards & prep needs
+    ;; Known issues
+    (stained blouse1)
     (tissue-in-pocket hoodie1)
     (coins-in-pocket jeans1)
     (zippers-open jeans1)
@@ -37,10 +42,33 @@
     (undamaged hoodie1)
     (undamaged blouse1)
     (undamaged tshirt1)
+
+    ;; Canonical pipeline stage for each garment
+    (stage-prep jeans1)
+    (stage-prep hoodie1)
+    (stage-prep blouse1)
+    (stage-prep tshirt1)
+
+    ;; Canonical cross-garment order
+    (current jeans1)
+    (next jeans1 hoodie1)
+    (next hoodie1 blouse1)
+    (next blouse1 tshirt1)
+
+    ;; Finish policy (disambiguate fold vs hang)
+    (must-fold jeans1)
+    (must-hang hoodie1)
+    (must-hang blouse1)
+    (must-fold tshirt1)
+
+    ;; Lint must be cleared once before any loading
+    ;; (lint-cleared) is false by default (closed world)
+
+    (= (total-cost) 0)
   )
 
   (:goal (and
-    ;; Core washing / drying / storage for all
+    ;; Core washing / drying / storage for all (as preferences)
     (preference washed-jeans1 (washed jeans1))
     (preference dried-jeans1 (dried jeans1))
     (preference stored-jeans1 (put-away jeans1))
@@ -57,7 +85,7 @@
     (preference dried-tshirt1 (dried tshirt1))
     (preference stored-tshirt1 (put-away tshirt1))
 
-    ;; Prep & safety preferences (longer chain incentives)
+    ;; Prep & safety preferences (same names as before)
     (preference pockets-checked-jeans (pockets-checked jeans1))
     (preference pockets-checked-hoodie (pockets-checked hoodie1))
     (preference zippers-closed-jeans (not (zippers-open jeans1)))
@@ -66,18 +94,18 @@
     (preference no-coins-jeans (not (coins-in-pocket jeans1)))
     (preference inside-out-blouse (inside-out blouse1))
 
-    ;; Quality outcomes to undo risky choices
+    ;; Quality outcomes
     (preference no-lint-jeans (not (lint-covered jeans1)))
     (preference no-lint-hoodie (not (lint-covered hoodie1)))
     (preference no-bleed-all (and (not (color-bled jeans1)) (not (color-bled hoodie1)) (not (color-bled blouse1)) (not (color-bled tshirt1))))
     (preference not-shrunk-all (and (not (shrunk jeans1)) (not (shrunk hoodie1)) (not (shrunk blouse1)) (not (shrunk tshirt1))))
     (preference undamaged-all (and (undamaged jeans1) (undamaged hoodie1) (undamaged blouse1) (undamaged tshirt1)))
-    (preference fresh-blouse (fresh-smell blouse1))
+    (preference fresh-blouse (soften blouse1))
 
     ;; Machine care
     (preference lint-removed-dryer (lint-removed dryer1))
 
-    ;; Attention check (declared but not penalized)
+    ;; Optional attention check
     (preference perfect-press (and (ironed jeans1) (ironed hoodie1) (ironed blouse1) (ironed tshirt1)))
   ))
 
