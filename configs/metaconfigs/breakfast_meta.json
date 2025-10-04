@@ -1,0 +1,54 @@
+{
+    "task_name": "bk",
+    
+    "use_cost_spikes": false,
+    "use_budget_decrease": false,
+    "use_remove_effects_all": false,
+    "use_remove_effects_single": true,
+    "use_type_swaps": false,
+
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    
+    "actions_for_budget_decrease": "all",
+    "budget_initial_values": [2],
+    "budget_decrease_values": [2],
+    "budget_actions_special_action_sets": {
+        "set_verify_seasoning": {
+            "actions": ["verify_is_salt", "verify_is_sugar"],
+            "initial": 1,
+            "decrease": [1, 1]
+        },
+        "set_verify_egg": {
+            "actions": ["verify_is_raw_egg", "verify_is_boiled_egg"],
+            "initial": 1,
+            "decrease": [1, 1]
+        },
+        "set_crack_egg_blind": {
+            "actions": ["crack_egg_thinks_raw_is_boiled", "crack_egg_thinks_raw_is_raw", "crack_egg_thinks_boiled_is_boiled", "crack_egg_thinks_boiled_is_raw"],
+            "initial": 2,
+            "decrease": [1, 1, 1, 1]
+        },
+        "set_season_egg": {
+            "actions": ["season_egg_blind_sugar", "season_egg_blind_salt", "season_egg_with_sugar", "season_egg_with_salt"],
+            "initial": 1,
+            "decrease": [1, 1, 1, 1]
+        }
+    },
+
+    "removable_effects": [
+        "stubborn_sticking",
+        "damaged",
+        "dirty",
+        "used_blind_egg_crack"
+    ],
+
+    "object_type_to_compatible_objects": {
+        "raw_egg": ["raw_egg1", "boiled_egg1"],
+        "boiled_egg": ["raw_egg1", "boiled_egg1"],
+        "spoiled_milk": ["milk1", "milk2"],
+        "fresh_milk": ["milk1", "milk2"],
+        "sugar": ["sugar1", "salt1"],
+        "salt": ["sugar1", "salt1"]
+    }
+}

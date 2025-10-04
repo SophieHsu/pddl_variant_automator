@@ -127,6 +127,43 @@ def remove_effect_predicates(domain_ast: List, predicate_names: List[str]) -> in
             i += 1
     return removed
 
+def remove_effect_from_single_action(domain_ast: List, predicate_names: List[str], action_name_substr: str) -> int:
+    """Remove literals whose functor matches predicate_names (or their negations) from a specific action. Return count removed."""
+    define = _find_define_block(domain_ast)
+    if not define: return 0
+    removed = 0
+    action_list, name, kind = _find_action_by_name(define, action_name_substr)
+    # find :effect
+    i = 0
+    while i < len(action_list):
+        if action_list[i] == ':effect' and i+1 < len(action_list) and isinstance(action_list[i+1], list):
+            eff = action_list[i+1]
+            # normalize to (and ...)
+            if eff and eff[0] != 'and':
+                action_list[i+1] = ['and', eff]
+                eff = action_list[i+1]
+            if eff and isinstance(eff, list):
+                new_items = []
+                for lit in eff[1:]:
+                    keep = True
+                    # handle (not (p ...)) or (p ...)
+                    if isinstance(lit, list) and lit:
+                        if lit[0] == 'not' and len(lit) == 2 and isinstance(lit[1], list) and lit[1]:
+                            functor = lit[1][0]
+                            if functor in predicate_names:
+                                keep = False
+                        else:
+                            functor = lit[0]
+                            if functor in predicate_names:
+                                keep = False
+                    if keep:
+                        new_items.append(lit)
+                    else:
+                        removed += 1
+                action_list[i+1] = ['and'] + new_items
+        i += 1
+    return removed
+
 def _read_typed_object_blocks(objs: List[str]) -> List[Tuple[List[str], str]]:
     """Given a flat token list from :objects (e.g., ['a','b','-','type','c','-','t2']),
        return [([names], type), ...]."""
