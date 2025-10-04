@@ -1,36 +1,98 @@
-
-(define (problem moveout-instance-1-fixed)
+(define (problem moveout-instance-updated)
   (:domain moveout-v1-expert-fixed)
 
   (:objects
+    ;; rooms
     bedroom kitchen living - room
-    tv - fragile_item
-    plates - fragile_item
-    books - item
+    ;; items
+    tv plates books - item
+    ;; packaging / tools
     box1 box2 box3 - box
     tape1 - tape
     label1 label2 label3 - label
     cart1 - cart
     truck1 - truck
     sponge - cleaner
-    bag1 bag2 - trashbag
     key1 - key
   )
 
   (:init
+    ;; agent location (use only the predicate your domain declares)
+    (current-room living)
+
+    ;; room state
+    (room-unlocked bedroom)
+    (room-unlocked kitchen)
+    (room-unlocked living)
+
+    (room-unfinished bedroom)
+    (room-unfinished kitchen)
+    (room-unfinished living)
+
+    (room-uninspected bedroom)
+    (room-uninspected kitchen)
+    (room-uninspected living)
+
+    ;; floors start undamaged (you may leave them not-clean to force cleaning)
+    (floor-undamaged bedroom)
+    (floor-undamaged kitchen)
+    (floor-undamaged living)
+    ;; leave floor-clean facts OUT initially if you want cleaning actions to apply
+
+    ;; items and their rooms
     (in-room tv living)
     (in-room plates kitchen)
     (in-room books bedroom)
 
+    ;; initial item condition
     (undamaged tv)
     (undamaged plates)
     (undamaged books)
+    (item-stage-prep tv)
+    (item-stage-prep plates)
+    (item-stage-prep books)
 
-    (floor-undamaged bedroom)
-    (floor-undamaged kitchen)
-    (floor-undamaged living)
+    ;; boxes located at rooms (one per room to keep counters consistent)
+    (box-at box1 bedroom)
+    (box-at box2 kitchen)
+    (box-at box3 living)
+
+    ;; planned packing assignments (optional but useful if your actions consult these)
+    (assigned-box tv box3)
+    (assigned-box plates box2)
+    (assigned-box books box1)
+
+    (assigned-label box1 label1)
+    (assigned-label box2 label2)
+    (assigned-label box3 label3)
+
+    ;; keys in hand (if your lock/unlock/return keys actions use this)
+    (keys-in-hand key1)
+
+    ;; numeric resources / counters
+    ;; boxes-left counts boxes for the room that are NOT YET LOADED.
+    ;; set equal to the number of boxes you intend to load per room.
+    (= (boxes-left bedroom) 1)
+    (= (boxes-left kitchen) 1)
+    (= (boxes-left living) 1)
+
+    ;; tape & cleaner resources (set to something reasonable)
+    (= (tape-length tape1) 10)
+    (= (cleaner-amount sponge) 5)
+
+    ;; number of trash bags available (domain uses zero-arity trashbags-left)
+    (= (trashbags-left) 2)
+
+    ;; total-cost starts at 0 if you are minimizing it
+    (= (total-cost) 0)
+
+    ;; which room is the final one that gates moveout completion
+    (final-room kitchen)
   )
 
+  ;; Keep the goal simple and aligned with the domain’s last action:
+  ;; mark_moveout_complete requires (final-room ?r) and (room-stage-done ?r),
+  ;; then asserts (moveout-complete).
   (:goal (and
     ;; Logistics: each item boxed (rewrite exists to disjunction for OPTIC compatibility)
     (preference tv-boxed (or (in-box tv box1) (in-box tv box2) (in-box tv box3)))
@@ -58,10 +120,11 @@
     (preference floors-undamaged (and (floor-undamaged bedroom) (floor-undamaged kitchen) (floor-undamaged living)))
     (preference trash-removed-all (and (trash-removed bedroom) (trash-removed kitchen) (trash-removed living)))
     (preference keys-back (keys-returned))
-  ))
+    (moveout-complete))
+  )
 
-  (:metric
-    minimize (+
+  ;; Use whatever metric your domain supports; total-cost is common with :action-costs
+  (:metric minimize (+
       (total-cost)
       (is-violated tv-boxed)
       (is-violated plates-boxed)
