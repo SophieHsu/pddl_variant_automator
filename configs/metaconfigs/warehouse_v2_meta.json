@@ -1,0 +1,62 @@
+{
+    "task_name": "warehouse_v2",
+  
+    "use_cost_spikes": true,
+    "use_budget_decrease": true,
+    "use_remove_effects_all": true,
+    "use_remove_effects_single": true,
+    "use_type_swaps": true,
+    "use_mix": true,
+  
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": [
+      "advance_to_next_item",
+      "advance_to_next_bin"
+    ],
+  
+    "removable_effects": [
+      "in-tote",
+      "item-scanned",
+      "item-binned",
+      "bin-labeled",
+      "bin-sealed",
+      "wrapped",
+      "assigned-bin"
+    ],
+  
+    "actions_for_budget_decrease": [],
+    "budget_initial_values": [10],
+    "budget_decrease_values": [],
+  
+    "budget_actions_special_action_sets": {
+      "scan_and_pick": {
+        "initial": 10,
+        "actions": ["scan_item_safe", "pick_with_scan"],
+        "decrease": [4, 4]
+      },
+      "blind_pick": {
+        "initial": 8,
+        "actions": ["pick_blind_item"],
+        "decrease": [6]
+      },
+      "label_and_seal_bin": {
+        "initial": 7,
+        "actions": ["label_bin", "seal_bin"],
+        "decrease": [3, 3]
+      },
+      "palletize_and_wrap": {
+        "initial": 7,
+        "actions": ["palletize_bin", "wrap_pallet"],
+        "decrease": [4, 2]
+      }
+    },
+
+    "object_type_to_compatible_objects": {
+        "bin": ["bin1", "bin2"],
+        "shelf": ["shelfA", "shelfB"],
+        "aisle": ["a1", "a2"],
+        "location": ["loc1", "loc2"],
+        "item": ["itemA", "itemB"]
+    }
+  }

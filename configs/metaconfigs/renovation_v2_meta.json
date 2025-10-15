@@ -1,0 +1,86 @@
+{
+    "task_name": "renovation_v2",
+  
+    "use_cost_spikes": true,
+    "use_budget_decrease": true,
+    "use_remove_effects_all": true,
+    "use_remove_effects_single": true,
+    "use_type_swaps": true,
+    "use_mix": true,
+  
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": [
+      "advance_to_next_room",
+      "advance_to_next_wall",
+      "mark_final_wall_done"
+    ],
+  
+    "removable_effects": [
+      "paint-on-roller",
+      "paint-on-brush",
+      "paint-in-tray"
+    ],
+  
+    "actions_for_budget_decrease": [],
+    "budget_initial_values": [10],
+    "budget_decrease_values": [],
+  
+    "budget_actions_special_action_sets": {
+      "prep_wall": {
+        "initial": 8,
+        "actions": ["move_furniture", "cover_floor", "tape_edges", "stir_paint"],
+        "decrease": [1, 2, 2, 1]
+      },
+      "first_coat_safe": {
+        "initial": 8,
+        "actions": ["paint_first_coat_safe", "clean_tool"],
+        "decrease": [5, 1]
+      },
+      "first_coat_risky_floor": {
+        "initial": 8,
+        "actions": ["paint_first_coat_floor_risky", "clean_tool"],
+        "decrease": [5, 1]
+      },
+      "first_coat_risky_wall": {
+        "initial": 8,
+        "actions": ["paint_first_coat_wall_risky", "clean_tool"],
+        "decrease": [5, 1]
+      },
+      "second_coat_safe": {
+        "initial": 8,
+        "actions": ["paint_second_coat_safe", "clean_tool"],
+        "decrease": [5, 1]
+      },
+      "detail_safe": {
+        "initial": 6,
+        "actions": ["detail_edges_safe", "clean_tool"],
+        "decrease": [4, 1]
+      },
+      "detail_risky": {
+        "initial": 7,
+        "actions": ["detail_edges_risky", "clean_tool"],
+        "decrease": [5, 1]
+      },
+      "advance_wall": {
+        "initial": 3,
+        "actions": ["advance_to_next_wall"],
+        "decrease": [1]
+      },
+      "room_transition": {
+        "initial": 4,
+        "actions": ["advance_to_next_room"],
+        "decrease": [2]
+      },
+      "finalize": {
+        "initial": 3,
+        "actions": ["mark_final_wall_done"],
+        "decrease": [1]
+      }
+    },
+
+    "object_type_to_compatible_objects": {
+        "roller": ["rlr1", "br1"]
+    }
+  }
+  

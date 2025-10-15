@@ -1,0 +1,77 @@
+{
+    "task_name": "laundry_v2",
+
+    "use_cost_spikes": true,
+    "use_budget_decrease": true,
+    "use_remove_effects_all": true,
+    "use_remove_effects_single": true,
+    "use_type_swaps": true,
+    "use_mix": true,
+  
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": ["advance_to_next"],
+  
+
+    "actions_for_budget_decrease": [],
+    "budget_initial_values": [5],
+    "budget_decrease_values": [],
+  
+    "budget_actions_special_action_sets": {
+        "sort_light":            { "initial": 5, "actions": ["sort_light"],               "decrease": [1] },
+        "sort_dark":             { "initial": 5, "actions": ["sort_dark"],                "decrease": [1] },
+        "sort_delicate":         { "initial": 5, "actions": ["sort_delicate"],            "decrease": [2] },
+        "pretreat_stain":        { "initial": 5, "actions": ["pretreat_stain"],           "decrease": [2] },
+        "check_pockets":         { "initial": 5, "actions": ["check_pockets"],            "decrease": [1] },
+        "remove_tissue":         { "initial": 5, "actions": ["remove_tissue"],            "decrease": [1] },
+        "remove_coins":          { "initial": 5, "actions": ["remove_coins"],             "decrease": [1] },
+        "close_zippers":         { "initial": 5, "actions": ["close_zippers"],            "decrease": [1] },
+        "turn_inside_out_delicate": { "initial": 5, "actions": ["turn_inside_out_delicate"], "decrease": [1] },
+
+        "prewash_safety_basic": {
+            "initial": 6,
+            "actions":  ["check_pockets", "remove_coins", "close_zippers"],
+            "decrease": [2,                2,              2]
+        },
+
+        "prewash_safety_plus_tissue": {
+            "initial": 7,
+            "actions":  ["check_pockets", "remove_coins", "close_zippers", "remove_tissue"],
+            "decrease": [2,                2,              2,               1]
+        },
+
+        "prewash_delicates": {
+            "initial": 6,
+            "actions":  ["sort_delicate", "turn_inside_out_delicate"],
+            "decrease": [3,               3]
+        },
+
+        "prewash_full_sort": {
+            "initial": 6,
+            "actions":  ["sort_light", "sort_dark"],
+            "decrease": [3,            3]
+        },
+
+        "prewash_stain_focus": {
+            "initial": 6,
+            "actions":  ["pretreat_stain", "check_pockets"],
+            "decrease": [4,               2]
+        }
+    },
+
+    "removable_effects": [
+      "stained",
+      "lint-covered",
+      "color-bled",
+      "shrunk"
+    ],
+
+    "object_type_to_compatible_objects": {
+        "detergent": ["tide", "pretreat1", "sof1"],
+        "softener": ["sof1", "tide", "pretreat1"],
+        "stainremover": ["pretreat1", "sof1", "tide"],
+        "steamer": ["steamer1", "iron1"],
+        "iron": ["iron1", "steamer1"]
+    }
+  }
+  

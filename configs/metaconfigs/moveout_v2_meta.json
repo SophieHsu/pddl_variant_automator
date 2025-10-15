@@ -1,0 +1,70 @@
+{
+    "task_name": "moveout_v2",
+  
+    "use_cost_spikes": true,
+    "use_budget_decrease": true,
+    "use_remove_effects_all": true,
+    "use_remove_effects_single": true,
+    "use_type_swaps": false,
+    "use_mix": true,
+  
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": [
+      "move_to_room",
+      "declare_room_moved_out",
+      "unlock_room",
+      "lock_room",
+      "return_keys",
+      "mark_moveout_complete",
+      "inspect_room"
+    ],
+  
+    "removable_effects": [
+      "wrapped",
+      "sealed",
+      "assigned-label",
+      "assigned-box",
+      "floor-clean"
+    ],
+  
+    "actions_for_budget_decrease": [],
+    "budget_initial_values": [10],
+    "budget_decrease_values": [],
+  
+    "budget_actions_special_action_sets": {
+      "economy_move": {
+        "initial": 10,
+        "actions": [
+          "wrap_item",
+          "pack_item_safe",
+          "label_box",
+          "seal_box",
+          "move_box_to_cart",
+          "load_truck",
+          "inspect_room"
+        ],
+        "decrease": [1, 1, 1, 1, 2, 3, 1]
+      },
+      "deep_clean_and_secure": {
+        "initial": 12,
+        "actions": [
+          "sweep_floor_soft",
+          "sweep_floor_harsh",
+          "bag_trash",
+          "inspect_room"
+        ],
+        "decrease": [2, 4, 2, 1]
+      },
+      "risky_blind_pack": {
+        "initial": 10,
+        "actions": [
+          "pack_item_blind",
+          "seal_box",
+          "load_truck"
+        ],
+        "decrease": [3, 1, 3]
+      }
+    }
+  }
+  

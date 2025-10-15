@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Generate PDDL configs from a meta config to further generate variants.
+Usage:
+  python generate_configs.py \
+    --metaconfig configs/metaconfigs/warehouse_v2_meta.json \
+    --domain gt_pddl/warehouse_v2_domain.pddl \
+    --problem gt_pddl/warehouse_v2_problem.pddl \
+    --savepath configs/warehouse_v2_configs.json
+"""
 
 import argparse
 import json
@@ -106,8 +116,9 @@ def main(args):
 
         """ Special action sets """
         for name, data in budget_decrease_special_action_sets.items():
+            init = data.get("initial", 1)
             transforms = [
-                    {"op": "ensure_budget", "name": "budget", "init": init_val},
+                    {"op": "ensure_budget", "name": "budget", "init": init},
             ]
             for act, val in zip(data["actions"], data["decrease"]):
                 transforms.append(
