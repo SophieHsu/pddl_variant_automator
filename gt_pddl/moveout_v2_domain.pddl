@@ -303,9 +303,9 @@
       (room-unlocked ?r)
       (room-finished ?r)
       (floor-clean ?r) (current-room ?r) (room-stage-inspect ?r))
-    :effect (and (room-stage-done ?r))
+    :effect (and (room-stage-done ?r)
       (room-inspected ?r)
-      (not (room-uninspected ?r))
+      (not (room-uninspected ?r)))
   )
 
   (:action return_keys
