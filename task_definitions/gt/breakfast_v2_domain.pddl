@@ -2,8 +2,8 @@
 	(:requirements :strips :typing :preferences :action-costs)
 	
 	(:types
-		food tool cleaner hand - object
-		container utensil - tool
+		food tool hand - object
+		container utensil cleaner - tool
 		ingredient seasoning - food
 		egg tomatosauce milk - ingredient 
 		raw_egg boiled_egg - egg
@@ -96,6 +96,8 @@
 		(tried_raw_egg_first)
 		(used_blind_egg_crack)
 		(egg_plated)
+		(extra_verify)
+		(extra_soft_clean)
 
 		(is_cooking)
 		(is_cleaning) 
@@ -110,12 +112,11 @@
 			(= (current-phase) 1)
 			(= (current-verify-priority) (item-verify-priority ?s))
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(is_salt ?s)
 		)
 		:effect (and
 			(verified_salt ?s)
-			; (assign (current-verify-priority) (+ (current-verify-priority) 1))
+			(assign (current-verify-priority) (+ (current-verify-priority) 1))
 		)
 	)
 
@@ -125,12 +126,11 @@
 			(= (current-phase) 1)
 			(= (current-verify-priority) (item-verify-priority ?s))
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(is_sugar ?s)
 		)
 		:effect (and
 			(verified_sugar ?s)
-			; (assign (current-verify-priority) (+ (current-verify-priority) 1))
+			(assign (current-verify-priority) (+ (current-verify-priority) 1))
 		)
 	)
 
@@ -140,12 +140,11 @@
 			(= (current-phase) 1)
 			(= (current-verify-priority) (item-verify-priority ?e))
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(is_raw_egg ?e)
 		)
 		:effect (and
 			(verified_raw_egg ?e)
-			; (assign (current-verify-priority) (+ (current-verify-priority) 1))
+			(assign (current-verify-priority) (+ (current-verify-priority) 1))
 		)
 	)
 
@@ -155,12 +154,11 @@
 			(= (current-phase) 1)
 			(= (current-verify-priority) (item-verify-priority ?e))
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(is_boiled_egg ?e)
 		)
 		:effect (and
 			(verified_boiled_egg ?e)
-			; (assign (current-verify-priority) (+ (current-verify-priority) 1))
+			(assign (current-verify-priority) (+ (current-verify-priority) 1))
 		)
 	)
 
@@ -197,7 +195,6 @@
 		:precondition (and 
 			(= (current-phase) 3)
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(verified_raw_egg ?e)
 			(shelled ?e)
 			(clean ?b)
@@ -219,7 +216,6 @@
 		:precondition (and 
 			(= (current-phase) 3)
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(verified_boiled_egg ?e)
 			(shelled ?e)
 			(clean ?b)
@@ -240,7 +236,6 @@
 		:precondition (and
 			(= (current-phase) 3)
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(is_boiled_egg ?e)
 			(shelled ?e)
 			(clean ?b)
@@ -258,7 +253,6 @@
 		:precondition (and 
 			(= (current-phase) 3)
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(is_raw_egg ?e)
 			(shelled ?e)
 			(clean ?b)
@@ -283,7 +277,6 @@
 		:precondition (and 
 			(= (current-phase) 3)
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(tried_raw_egg_first)
 			(is_boiled_egg ?e)
 			(shelled ?e)
@@ -306,7 +299,6 @@
 		:precondition (and 
 			(= (current-phase) 3)
 			(is_cooking)
-			; (is_fresh_milk_poured)
 			(tried_raw_egg_first)
 			(is_raw_egg ?e)
 			(shelled ?e)
@@ -346,11 +338,11 @@
 
 	; Season egg actions
 	(:action season_egg_blind_sugar
-		:parameters (?e - egg ?s - sugar ?d - dish)
+		:parameters (?e - egg ?s - sugar ?b - bowl)
 		:precondition (and
 			(= (current-phase) 3)
 			(is_cooking)
-			(in ?e ?d)
+			(in ?e ?b)
 			(uncooked ?e)
 			(unseasoned ?e ?s)
 			(beated ?e)
@@ -365,11 +357,11 @@
 	)
 
 	(:action season_egg_blind_salt
-		:parameters (?e - egg ?s - salt ?d - dish)
+		:parameters (?e - egg ?s - salt ?b - bowl)
 		:precondition (and
 			(= (current-phase) 3)
 			(is_cooking)
-			(in ?e ?d)
+			(in ?e ?b)
 			(uncooked ?e)
 			(unseasoned ?e ?s)
 			(beated ?e)
@@ -384,11 +376,11 @@
 	)
 
 	(:action season_egg_with_sugar
-		:parameters (?e - egg ?s - seasoning ?d - dish)
+		:parameters (?e - egg ?s - seasoning ?b - bowl)
 		:precondition (and
 			(= (current-phase) 3)
 			(is_cooking)
-			(in ?e ?d) 
+			(in ?e ?b) 
 			(uncooked ?e) 
 			(unseasoned ?e ?s) 
 			(beated ?e)
@@ -403,11 +395,11 @@
 	)
 
 	(:action season_egg_with_salt
-		:parameters (?e - egg ?s - seasoning ?d - dish)
+		:parameters (?e - egg ?s - seasoning ?b - bowl)
 		:precondition (and
 			(= (current-phase) 3)
 			(is_cooking)
-			(in ?e ?d) 
+			(in ?e ?b) 
 			(uncooked ?e) 
 			(unseasoned ?e ?s) 
 			(beated ?e)
@@ -495,7 +487,7 @@
 	(:action open_can
 		:parameters (?i - ingredient)
 		:precondition (and 
-			(= (current-phase) 3)
+			(= (current-phase) 4)
 			(is_cooking)
 			(egg_plated)
 			(canned ?i)
@@ -510,7 +502,7 @@
 	(:action dump_can_to
 		:parameters (?i - ingredient ?b - bowl)
 		:precondition (and 
-			(= (current-phase) 3)
+			(= (current-phase) 4)
 			(is_cooking)
 			(canned ?i)
 			(can_opened ?i)
@@ -573,7 +565,7 @@
 	(:action microwave_ingredient_unsafe
 		:parameters (?i - ingredient ?d - dish)
 		:precondition (and
-			(= (current-phase) 3)
+			(= (current-phase) 4)
 			(is_cooking)
 			(in ?i ?d)
 			(unheated ?i)
@@ -590,7 +582,7 @@
 	(:action microwave_ingredient_safe
 		:parameters (?i - ingredient ?d - dish)
 		:precondition (and
-			(= (current-phase) 3)
+			(= (current-phase) 4)
 			(is_cooking)
 			(in ?i ?d)
 			(unheated ?i)
@@ -607,7 +599,7 @@
 	(:action add_topping
 		:parameters (?base - ingredient ?topping - ingredient ?d - dish)
 		:precondition (and
-			(= (current-phase) 3)
+			(= (current-phase) 5)
 			(is_cooking)
 			(in ?topping ?d)
 			(plated ?base)
@@ -650,12 +642,11 @@
 	(:action clean_container_harsh_damaging
 		:parameters (?c - container ?cleaner - cleaner)
 		:precondition (and 
-			(= (current-phase) 4)
+			(= (current-phase) 6)
 			(= (current-clean-priority) (item-clean-priority ?c))
 			(dirty ?c)
 			(unoccupied ?c)
 			(harsh_cleaner ?cleaner)
-			(delicate ?c)
 		)
 		:effect (and 
 			(is_cleaning)
@@ -672,7 +663,7 @@
 	(:action clean_container_soft
 		:parameters (?c - container ?cleaner - cleaner)
 		:precondition (and 
-			(= (current-phase) 4)
+			(= (current-phase) 6)
 			(= (current-clean-priority) (item-clean-priority ?c))
 			(dirty ?c)
 			(unoccupied ?c)
@@ -683,25 +674,7 @@
 			(not (is_cooking))
 			(clean ?c)
 			(not (dirty ?c))
-			(assign (current-clean-priority) (+ (current-clean-priority) 1))
-		)
-	)
-
-	(:action clean_container_harsh_safe
-		:parameters (?c - container ?cleaner - cleaner)
-		:precondition (and
-			(= (current-phase) 4)
-			(= (current-clean-priority) (item-clean-priority ?c))
-			(dirty ?c)
-			(unoccupied ?c)
-			(harsh_cleaner ?cleaner)
-			(non_delicate ?c)
-		)
-		:effect (and
-			(is_cleaning)
-			(not (is_cooking))
-			(clean ?c)
-			(not (dirty ?c))
+			(dirty ?cleaner)
 			(assign (current-clean-priority) (+ (current-clean-priority) 1))
 		)
 	)

@@ -1,0 +1,50 @@
+(define (problem problem_logistics)
+    (:domain sequence-expert)
+	(:requirements :strips :typing :preferences :action-costs)
+
+    (:objects
+        item1 item2 item3 item4 item5 item6 item7 item8 item9 item10 - item
+    )
+
+    (:init
+        (= (total-cost) 0)
+        (= (task-stage) 1)
+        (= (task-order item1) 1)
+        (= (task-order item2) 2)
+        (= (task-order item3) 3)
+        (= (task-order item4) 4)
+        (= (task-order item5) 5)
+        (= (task-order item6) 6)
+        (= (task-order item7) 7)
+        (= (task-order item8) 8)
+        (= (task-order item9) 9)
+        (= (task-order item10) 10)
+    )
+
+    (:goal (and
+        (preference a1 (action1-done))
+        (preference a2 (action2-done))
+        (preference a3 (action3-done))
+        (preference a4 (action4-done))
+        (preference a5 (action5-done))
+        (preference a6 (action6-done))
+        (preference a7 (action7-done))
+        (preference a8 (action8-done))
+        (preference a9 (action9-done))
+        (preference a10 (action10-done))
+    ))
+
+    (:metric minimize (+
+        (total-cost)
+        (is-violated a1)
+        (is-violated a2)
+        (is-violated a3)
+        (is-violated a4)
+        (is-violated a5)
+        (is-violated a6)
+        (is-violated a7)
+        (is-violated a8)
+        (is-violated a9)
+        (is-violated a10)
+    ))
+)

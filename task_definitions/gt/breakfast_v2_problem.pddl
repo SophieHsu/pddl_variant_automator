@@ -38,8 +38,8 @@
 		(undamaged cup1)
 		; container special properties
 		(delicate pan1)
-		(microwave_unsafe bowl1)
-		(microwave_safe bowl2)
+		(microwave_safe bowl1)
+		(microwave_unsafe bowl2)
 		; pan is not preheated
 		(not_preheated pan1)
 		; cleaner special properties
@@ -81,13 +81,13 @@
 		(= (item-verify-priority salt1) 2)
 		(= (item-verify-priority boiled_egg1) 3)
 		(= (item-verify-priority raw_egg1) 4)
-		(= (item-clean-priority bowl1) 1)
-		(= (item-clean-priority bowl2) 2)
-		(= (item-clean-priority pan1) 3)
+		(= (item-clean-priority pan1) 1)
+		(= (item-clean-priority bowl1) 2)
+		(= (item-clean-priority bowl2) 3)
 	)
 	
 	(:goal (and 
-		; salt was verified
+		; salt verified
 		(preference salt-verified (verified_salt salt1))
 		; tomato sauce is opened and heated
 		(preference opened-tomatosauce1 (can_opened tomatosauce1))
@@ -105,6 +105,7 @@
 		(preference clean-pan1 (clean pan1))
 		(preference clean-bowl1 (clean bowl1))
 		(preference clean-bowl2 (clean bowl2))
+		(preference clean-sponge (not (dirty sponge1)))
 		(preference undamaged-pan1 (undamaged pan1))
 		(preference undamaged-bowl1 (undamaged bowl1))
 		(preference undamaged-bowl2 (undamaged bowl2))
@@ -112,14 +113,15 @@
 		; prefer not to take risky blind actions
 		(preference no-blind-egg-crack (not (used_blind_egg_crack)))
 		; milk in cup
-		(preference milk2-in-cup (in milk2 cup1))
+		; (preference milk2-in-cup (in milk2 cup1))
+		(preference fresh-milk-poured (is_fresh_milk_poured))
 		; preference to try milk1 first
 		(preference tried-milk1-first (verified_spoiled_milk milk1))
 	))
 
     (:metric minimize (+ 
 		(total-cost)
-		; (is-violated salt-verified)
+		(is-violated salt-verified)
 		(is-violated beated-raw-egg1)
 		(is-violated salted-raw-egg1)
 		(is-violated not-sugared-raw-egg1)
@@ -128,13 +130,16 @@
 		(is-violated opened-tomatosauce1)
 		(is-violated heated-tomatosauce1)
 		(is-violated raw-egg1-topped-with-tomatosauce1)
+		(is-violated clean-bowl1)
+		(is-violated clean-bowl2)
 		(is-violated clean-pan1)
         (is-violated undamaged-pan1)
         (is-violated undamaged-bowl1)
         (is-violated undamaged-bowl2)
 		(is-violated no-stubborn-sticking-pan1)
 		(is-violated no-blind-egg-crack)
-		(is-violated milk2-in-cup)
+		; (is-violated milk2-in-cup)
+		(is-violated fresh-milk-poured)
 		(is-violated tried-milk1-first)
     ))
 )

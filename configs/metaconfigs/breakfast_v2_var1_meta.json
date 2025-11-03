@@ -1,0 +1,46 @@
+{
+    "task_name": "bkv2-var1",
+    
+    "use_cost_spikes": true,
+    "use_budget_decrease": false,
+    "use_remove_effects_all": false,
+    "use_remove_effects_single": true,
+    "use_type_swaps": true,
+    "use_mix": true,
+
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": [
+        "skip_verification",
+        "go_to_next_phase",
+        "dispose_ingredient",
+        "verify_is_salt",
+        "verify_is_sugar",
+        "verify_is_raw_egg",
+        "verify_is_boiled_egg",
+        "season_egg_blind_sugar",
+        "season_egg_blind_salt"
+    ],
+    
+    "actions_for_budget_decrease": "all",
+    "budget_initial_values": [2],
+    "budget_decrease_values": [2],
+    "budget_actions_special_action_sets": {
+        "set_season_egg": {
+            "actions": ["season_egg_with_sugar", "season_egg_with_salt"],
+            "initial": 1,
+            "decrease": [1, 1, 1, 1]
+        }
+    },
+
+    "removable_effects": [
+        "stubborn_sticking",
+        "damaged",
+        "used_blind_egg_crack"
+    ],
+
+    "object_type_to_compatible_objects": {
+        "spoiled_milk": ["milk1", "milk2"],
+        "fresh_milk": ["milk1", "milk2"]
+    }
+}

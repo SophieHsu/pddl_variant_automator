@@ -1,0 +1,59 @@
+{
+    "task_name": "bkv2-var4",
+    
+    "use_cost_spikes": true,
+    "use_budget_decrease": false,
+    "use_remove_effects_all": false,
+    "use_remove_effects_single": true,
+    "use_type_swaps": true,
+    "use_mix": true,
+
+    "actions_for_cost_spike": "all",
+    "cost_spike_values": [10000],
+    "cost_spike_exclude_actions": [
+        "skip_verification",
+        "go_to_next_phase",
+        "dispose_ingredient"
+    ],
+    
+    "actions_for_budget_decrease": "all",
+    "budget_initial_values": [2],
+    "budget_decrease_values": [2],
+    "budget_actions_special_action_sets": {
+        "set_verify_seasoning": {
+            "actions": ["verify_is_salt", "verify_is_sugar"],
+            "initial": 1,
+            "decrease": [1, 1]
+        },
+        "set_verify_egg": {
+            "actions": ["verify_is_raw_egg", "verify_is_boiled_egg"],
+            "initial": 1,
+            "decrease": [1, 1]
+        },
+        "set_crack_egg_blind": {
+            "actions": ["crack_egg_thinks_raw_is_boiled", "crack_egg_thinks_raw_is_raw", "crack_egg_thinks_boiled_is_boiled", "crack_egg_thinks_boiled_is_raw"],
+            "initial": 2,
+            "decrease": [1, 1, 1, 1]
+        },
+        "set_season_egg": {
+            "actions": ["season_egg_blind_sugar", "season_egg_blind_salt", "season_egg_with_sugar", "season_egg_with_salt"],
+            "initial": 1,
+            "decrease": [1, 1, 1, 1]
+        }
+    },
+
+    "removable_effects": [
+        "stubborn_sticking",
+        "damaged",
+        "used_blind_egg_crack"
+    ],
+
+    "object_type_to_compatible_objects": {
+        "raw_egg": ["premium_raw_silkie_egg", "premium_hard_boiled_egg1"],
+        "boiled_egg": ["premium_raw_silkie_egg", "premium_hard_boiled_egg1"],
+        "spoiled_milk": ["opened_fatfree_milk1", "unopened_whole_milk"],
+        "fresh_milk": ["opened_fatfree_milk1", "unopened_whole_milk"],
+        "sugar": ["cane_sugar1", "himalayan_sea_salt1"],
+        "salt": ["cane_sugar1", "himalayan_sea_salt1"]
+    }
+}

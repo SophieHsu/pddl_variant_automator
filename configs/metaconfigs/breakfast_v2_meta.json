@@ -3,7 +3,7 @@
     
     "use_cost_spikes": true,
     "use_budget_decrease": false,
-    "use_remove_effects_all": true,
+    "use_remove_effects_all": false,
     "use_remove_effects_single": true,
     "use_type_swaps": true,
     "use_mix": true,
@@ -12,7 +12,8 @@
     "cost_spike_values": [10000],
     "cost_spike_exclude_actions": [
         "skip_verification",
-        "go_to_next_phase"
+        "go_to_next_phase",
+        "dispose_ingredient"
     ],
     
     "actions_for_budget_decrease": "all",
@@ -44,7 +45,6 @@
     "removable_effects": [
         "stubborn_sticking",
         "damaged",
-        "dirty",
         "used_blind_egg_crack"
     ],
 
