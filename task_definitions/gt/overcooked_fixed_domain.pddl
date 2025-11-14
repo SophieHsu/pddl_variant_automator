@@ -2,7 +2,8 @@
     (:requirements :strips :typing :preferences :action-costs)
     (:types
         location player interactable - object
-        onion_dispenser tomato_dispenser dish_dispenser pot serve_counter door waste - interactable
+        onion_dispenser tomato_dispenser dish_dispenser pot serve_counter  door_onion door_tomato door_dish waste white_counter - interactable
+        ; door_onion door_tomato door_dish - door
     )
 
     (:functions
@@ -20,9 +21,6 @@
         
         (recipe-n-onions)
         (recipe-n-tomatoes)
-        
-        (n-free-counters)
-        (n-onions-on-counter)
     )
 
     (:predicates
@@ -47,13 +45,16 @@
         (wrong_soup_ready ?pot - pot)
 
         ; Door
-        (is_door_open ?d - door)
+        (is_door_open_onion ?door - door_onion)
+        (is_door_open_tomato ?door - door_tomato)
+        (is_door_open_dish ?door - door_dish)
 
         ; Task
         (correct_soup_cooked)
         (soup_cooked)
         (correct_soup_served)
         (soup_served)
+
         (attempt_pickup_onion)
         (attempt_pickup_tomato)
         (attempt_pickup_dish)
@@ -61,43 +62,53 @@
         (attempt_add_tomato)
         (attempt_pickup_soup)
         (attempt_serve_soup)
-        (attempt_door_open)
-        (took_efficient_path)
+
+        (attempt_door_open_onion)
+        (attempt_door_open_tomato)
+        (attempt_door_open_dish)
+        
+        (took_efficient_path_onion)
+        (took_efficient_path_tomato)
+        (took_efficient_path_dish)
 
         ; Prevent Extra Moving
         (is_not_prev_action_move)
     )
 
     ;;; Move-to Actions
-    (:action move_to_onion_dispenser
+    (:action move_to_onion_dispenser_long
         :parameters (?p - player ?from - location ?to - location ?d - onion_dispenser)
-        :precondition (and
+        :precondition (and 
             (= (current-phase) (onion-phase))
             (is_not_prev_action_move)
             (at ?p ?from)
             (located_at ?d ?to)
         )
-        :effect (and
+        :effect (and 
             (not (at ?p ?from))
             (at ?p ?to)
             (not (is_not_prev_action_move))
+            (increase (total-cost) 1)
+        )
+    )
+    
+    (:action move_to_onion_dispenser_short
+        :parameters (?p - player ?from - location ?to - location ?d - onion_dispenser ?door - door_onion)
+        :precondition (and 
+            (= (current-phase) (onion-phase))
+            (is_not_prev_action_move)
+            (at ?p ?from)
+            (located_at ?d ?to)
+            (is_door_open_onion ?door)
+        )
+        :effect (and 
+            (not (at ?p ?from))
+            (at ?p ?to)
+            (not (is_not_prev_action_move))
+            (took_efficient_path_onion)
         )
     )
 
-    ; (:action move_to_tomato_dispenser
-    ;     :parameters (?p - player ?from - location ?to - location ?d - tomato_dispenser)
-    ;     :precondition (and 
-    ;         (= (current-phase) (tomato-phase))
-    ;         (is_not_prev_action_move)
-    ;         (at ?p ?from)
-    ;         (located_at ?d ?to)
-    ;     )
-    ;     :effect (and 
-    ;         (not (at ?p ?from))
-    ;         (at ?p ?to)
-    ;         (not (is_not_prev_action_move))
-    ;     )
-    ; )
     (:action move_to_tomato_dispenser_long
         :parameters (?p - player ?from - location ?to - location ?d - tomato_dispenser)
         :precondition (and 
@@ -115,23 +126,23 @@
     )
     
     (:action move_to_tomato_dispenser_short
-        :parameters (?p - player ?from - location ?to - location ?d - tomato_dispenser ?door - door)
+        :parameters (?p - player ?from - location ?to - location ?d - tomato_dispenser ?door - door_tomato)
         :precondition (and 
             (= (current-phase) (tomato-phase))
             (is_not_prev_action_move)
             (at ?p ?from)
             (located_at ?d ?to)
-            (is_door_open ?door)
+            (is_door_open_tomato ?door)
         )
         :effect (and 
             (not (at ?p ?from))
             (at ?p ?to)
             (not (is_not_prev_action_move))
-            (took_efficient_path)
+            (took_efficient_path_tomato)
         )
     )
 
-    (:action move_to_dish_dispenser
+    (:action move_to_dish_dispenser_long
         :parameters (?p - player ?from - location ?to - location ?d - dish_dispenser)
         :precondition (and 
             (= (current-phase) (serve-phase))
@@ -143,6 +154,24 @@
             (not (at ?p ?from))
             (at ?p ?to)
             (not (is_not_prev_action_move))
+            (increase (total-cost) 1)
+        )
+    )
+    
+    (:action move_to_dish_dispenser_short
+        :parameters (?p - player ?from - location ?to - location ?d - dish_dispenser ?door - door_dish)
+        :precondition (and 
+            (= (current-phase) (serve-phase))
+            (is_not_prev_action_move)
+            (at ?p ?from)
+            (located_at ?d ?to)
+            (is_door_open_dish ?door)
+        )
+        :effect (and 
+            (not (at ?p ?from))
+            (at ?p ?to)
+            (not (is_not_prev_action_move))
+            (took_efficient_path_dish)
         )
     )
 
@@ -206,8 +235,23 @@
         )
     )
 
-    (:action move_to_door
-        :parameters (?p - player ?from - location ?to - location ?door - door)
+    (:action move_to_door_onion
+        :parameters (?p - player ?from - location ?to - location ?door - door_onion)
+        :precondition (and 
+            (= (current-phase) (onion-phase))
+            (is_not_prev_action_move)
+            (at ?p ?from)
+            (located_at ?door ?to)
+        )
+        :effect (and 
+            (not (at ?p ?from))
+            (at ?p ?to)
+            (not (is_not_prev_action_move))
+        )
+    )
+    
+    (:action move_to_door_tomato
+        :parameters (?p - player ?from - location ?to - location ?door - door_tomato)
         :precondition (and 
             (= (current-phase) (tomato-phase))
             (is_not_prev_action_move)
@@ -220,8 +264,21 @@
             (not (is_not_prev_action_move))
         )
     )
-    
-    
+
+    (:action move_to_door_dish
+        :parameters (?p - player ?from - location ?to - location ?door - door_dish)
+        :precondition (and 
+            (= (current-phase) (serve-phase))
+            (is_not_prev_action_move)
+            (at ?p ?from)
+            (located_at ?door ?to)
+        )
+        :effect (and 
+            (not (at ?p ?from))
+            (at ?p ?to)
+            (not (is_not_prev_action_move))
+        )
+    )
 
     ;;; Pick up Items from Dispenser
     (:action pickup_onion_from_dispenser
@@ -595,51 +652,86 @@
     )
 
     ;;; Door
-    (:action open_door
-        :parameters (?p - player ?l - location ?d - door)
+    (:action open_door_onion
+        :parameters (?p - player ?l - location ?d - door_onion)
+        :precondition (and 
+            (= (current-phase) (onion-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+        )
+        :effect (and 
+            (is_door_open_onion ?d)
+            (attempt_door_open_onion)
+            (is_not_prev_action_move)
+        )
+    )
+
+    (:action open_door_tomato
+        :parameters (?p - player ?l - location ?d - door_tomato)
         :precondition (and 
             (= (current-phase) (tomato-phase))
             (at ?p ?l)
             (located_at ?d ?l)
         )
         :effect (and 
-            (is_door_open ?d)
-            (attempt_door_open)
+            (is_door_open_tomato ?d)
+            (attempt_door_open_tomato)
             (is_not_prev_action_move)
         )
     )
 
-    (:action attempt_open_door
-        :parameters (?p - player ?l - location ?d - door)
+    (:action open_door_dish
+        :parameters (?p - player ?l - location ?d - door_dish)
+        :precondition (and 
+            (= (current-phase) (serve-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+        )
+        :effect (and 
+            (is_door_open_dish ?d)
+            (attempt_door_open_dish)
+            (is_not_prev_action_move)
+        )
+    )
+
+    (:action attempt_open_door_onion
+        :parameters (?p - player ?l - location ?d - door_onion)
+        :precondition (and 
+            (= (current-phase) (onion-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+        )
+        :effect (and 
+            (attempt_door_open_onion)
+            (is_not_prev_action_move)
+        )
+    )
+
+    (:action attempt_open_door_tomato
+        :parameters (?p - player ?l - location ?d - door_tomato)
         :precondition (and 
             (= (current-phase) (tomato-phase))
             (at ?p ?l)
             (located_at ?d ?l)
         )
         :effect (and 
-            (attempt_door_open)
+            (attempt_door_open_tomato)
             (is_not_prev_action_move)
         )
     )
 
-    ; ;;; Place on Counter
-    ; (:action place_onion_on_counter
-    ;     :parameters (?p - player ?l - location ?c - counter)
-    ;     :precondition (and 
-    ;         (at ?p ?l)
-    ;         (located_at ?c ?l)
-    ;         (holding_onion ?p)
-    ;         (> (n-free-counters ) 0)
-    ;     )
-    ;     :effect (and 
-    ;         (not (holding_onion ?p))
-    ;         (not (is_holding ?p))
-    ;         (is_not_holding ?p)
-    ;         (decrease (n-free-counters) 1)
-    ;         (increase (n-onions-on-counter) 1)
-    ;         (is_not_prev_action_move)
-    ;     )
-    ; )    
+    (:action attempt_open_door_dish
+        :parameters (?p - player ?l - location ?d - door_dish)
+        :precondition (and 
+            (= (current-phase) (serve-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+        )
+        :effect (and 
+            (attempt_door_open_dish)
+            (is_not_prev_action_move)
+        )
+    )
 
     ;;; To Next Phase
     (:action to_next_phase
