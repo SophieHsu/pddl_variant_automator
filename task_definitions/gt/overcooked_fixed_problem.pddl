@@ -70,6 +70,11 @@
         (preference took_efficient_path_tomato (took_efficient_path_tomato))
         (preference took_efficient_path_dish (took_efficient_path_dish))
 
+        (preference no_careless_pickup_onion (not (careless_pickup_onion)))
+        (preference no_careless_pickup_tomato (not (careless_pickup_tomato)))
+        (preference no_careless_pickup_dish (not (careless_pickup_dish)))
+        (preference no_careless_potting_onion (not (careless_potting_onion)))
+        (preference no_careless_potting_tomato (not (careless_potting_tomato)))
     ))
 
     (:metric minimize (+
@@ -78,9 +83,17 @@
         (is-violated attempt_door_open_onion)
         (is-violated attempt_door_open_tomato)
         (is-violated attempt_door_open_dish)
+
         (is-violated took_efficient_path_onion)
         (is-violated took_efficient_path_tomato)
         (is-violated took_efficient_path_dish)
+
+        (is-violated no_careless_pickup_onion)
+        (is-violated no_careless_pickup_tomato)
+        (is-violated no_careless_pickup_dish)
+        (is-violated no_careless_potting_onion)
+        (is-violated no_careless_potting_tomato)
+
         (is-violated attempt_tomato_pickup)
         (is-violated attempt_add_onion)
         (is-violated attempt_add_tomato)

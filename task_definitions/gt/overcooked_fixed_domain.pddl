@@ -71,6 +71,12 @@
         (took_efficient_path_tomato)
         (took_efficient_path_dish)
 
+        (careless_pickup_onion)
+        (careless_pickup_tomato)
+        (careless_pickup_dish)
+        (careless_potting_onion)
+        (careless_potting_tomato)
+
         ; Prevent Extra Moving
         (is_not_prev_action_move)
     )
@@ -281,7 +287,25 @@
     )
 
     ;;; Pick up Items from Dispenser
-    (:action pickup_onion_from_dispenser
+    (:action pickup_onion_from_dispenser_careless
+        :parameters (?p - player ?l - location ?d - onion_dispenser)
+        :precondition (and 
+            (= (current-phase) (onion-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+            (is_not_holding ?p)
+        )
+        :effect (and 
+            (is_holding ?p)
+            (not (is_not_holding ?p))
+            (holding_onion ?p)
+            (attempt_pickup_onion)
+            (is_not_prev_action_move)
+            (careless_pickup_onion)
+        )
+    )
+
+    (:action pickup_onion_from_dispenser_careful
         :parameters (?p - player ?l - location ?d - onion_dispenser)
         :precondition (and 
             (= (current-phase) (onion-phase))
@@ -298,7 +322,25 @@
         )
     )
 
-    (:action pickup_tomato_from_dispenser
+    (:action pickup_tomato_from_dispenser_careless
+        :parameters (?p - player ?l - location ?d - tomato_dispenser)
+        :precondition (and 
+            (= (current-phase) (tomato-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+            (is_not_holding ?p)
+        )
+        :effect (and 
+            (is_holding ?p)
+            (not (is_not_holding ?p))
+            (holding_tomato ?p)
+            (attempt_pickup_tomato)
+            (is_not_prev_action_move)
+            (careless_pickup_tomato)
+        )
+    )
+
+    (:action pickup_tomato_from_dispenser_careful
         :parameters (?p - player ?l - location ?d - tomato_dispenser)
         :precondition (and 
             (= (current-phase) (tomato-phase))
@@ -315,7 +357,25 @@
         )
     )
 
-    (:action pickup_dish_from_dispenser
+    (:action pickup_dish_from_dispenser_careless
+        :parameters (?p - player ?l - location ?d - dish_dispenser)
+        :precondition (and 
+            (= (current-phase) (serve-phase))
+            (at ?p ?l)
+            (located_at ?d ?l)
+            (is_not_holding ?p)
+        )
+        :effect (and 
+            (is_holding ?p)
+            (not (is_not_holding ?p))
+            (holding_dish ?p)
+            (attempt_pickup_dish)
+            (is_not_prev_action_move)
+            (careless_pickup_dish)
+        )
+    )
+
+    (:action pickup_dish_from_dispenser_careful
         :parameters (?p - player ?l - location ?d - dish_dispenser)
         :precondition (and 
             (= (current-phase) (serve-phase))
@@ -375,7 +435,28 @@
     )
 
     ;;; Pot Items
-    (:action place_onion_in_pot
+    (:action place_onion_in_pot_careless
+        :parameters (?p - player ?l - location ?pot - pot)
+        :precondition (and 
+            (= (current-phase) (onion-phase))
+            (at ?p ?l)
+            (located_at ?pot ?l)
+            (holding_onion ?p)
+            (is_not_cooking ?pot)
+        )
+        :effect (and 
+            (not (holding_onion ?p))
+            (not (is_holding ?p))
+            (is_not_holding ?p)
+            (increase (n-ingredients-in-pot ?pot) 1)
+            (increase (n-onions-in-pot ?pot) 1)
+            (attempt_add_onion)
+            (careless_potting_onion)
+            (is_not_prev_action_move)
+        )
+    )
+
+    (:action place_onion_in_pot_careful
         :parameters (?p - player ?l - location ?pot - pot)
         :precondition (and 
             (= (current-phase) (onion-phase))
@@ -395,7 +476,28 @@
         )
     )
 
-    (:action place_tomato_in_pot
+    (:action place_tomato_in_pot_careless
+        :parameters (?p - player ?l - location ?pot - pot)
+        :precondition (and 
+            (= (current-phase) (tomato-phase))
+            (at ?p ?l)
+            (located_at ?pot ?l)
+            (holding_tomato ?p)
+            (is_not_cooking ?pot)
+        )
+        :effect (and 
+            (not (holding_tomato ?p))
+            (not (is_holding ?p))
+            (is_not_holding ?p)
+            (increase (n-ingredients-in-pot ?pot) 1)
+            (increase (n-tomatoes-in-pot ?pot) 1)
+            (attempt_add_tomato)
+            (careless_potting_tomato)
+            (is_not_prev_action_move)
+        )
+    )
+
+    (:action place_tomato_in_pot_careful
         :parameters (?p - player ?l - location ?pot - pot)
         :precondition (and 
             (= (current-phase) (tomato-phase))
