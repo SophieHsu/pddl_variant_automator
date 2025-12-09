@@ -1,0 +1,1047 @@
+[
+  {
+    "name": "bkv3_spike_verify_is_salt_think_salt_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_verify_is_salt_think_salt_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_verify_is_salt_think_salt_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_spike_verify_is_raw_egg_think_raw_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_verify_is_raw_egg_think_raw_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_verify_is_raw_egg_think_raw_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_spike_crack_egg_raw_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_crack_egg_raw_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_crack_egg_raw_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_spike_clean_container_harsh_damaging_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_clean_container_harsh_damaging_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_clean_container_harsh_damaging_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_spike_open_can_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_open_can_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_spike_open_can_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_hazoff_all_stubborn_sticking",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_hazoff_all_stubborn_sticking_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_hazoff_all_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_verify_is_raw_egg_think_raw_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_verify_is_raw_egg_think_raw_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_verify_is_raw_egg_think_raw_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_crack_egg_raw_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_crack_egg_raw_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_crack_egg_raw_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_clean_container_harsh_damaging_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_clean_container_harsh_damaging_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_clean_container_harsh_damaging_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_open_can_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_open_can_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_spike_open_can_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_stubborn_sticking",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_stubborn_sticking_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_salt_think_salt_10000_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_salt', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_salt_think_sugar', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_sugar_think_salt', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_crack_egg_raw_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_crack_egg_raw_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_crack_egg_raw_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_clean_container_harsh_damaging_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_clean_container_harsh_damaging_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_clean_container_harsh_damaging_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_open_can_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_open_can_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_spike_open_can_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_stubborn_sticking",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_stubborn_sticking_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_verify_is_raw_egg_think_raw_10000_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_raw_egg_think_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'verify_is_boiled_egg_think_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_spike_clean_container_harsh_damaging_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_spike_clean_container_harsh_damaging_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_spike_clean_container_harsh_damaging_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_spike_open_can_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_spike_open_can_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_spike_open_can_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_stubborn_sticking",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_stubborn_sticking_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_crack_egg_raw_10000_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_crack_egg_raw_10000_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_boiled', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_raw_is_raw', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'crack_egg_thinks_boiled_is_raw', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_spike_open_can_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_spike_open_can_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_spike_open_can_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_stubborn_sticking",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_stubborn_sticking_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_clean_container_harsh_damaging_10000_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_harsh_damaging', 'K': 10000}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'clean_container_soft', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_open_can_10000_hazoff_all_stubborn_sticking",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_hazoff_all_stubborn_sticking_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_hazoff_all_stubborn_sticking_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_open_can_10000_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_open_can_10000_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_open_can_10000_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_open_can_10000_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_spike_open_can_10000_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_spike_open_can_10000_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_can', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_stubborn_sticking_hazoff_all_damaged",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_hazoff_all_damaged_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_hazoff_all_damaged_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_stubborn_sticking_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_stubborn_sticking_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_stubborn_sticking_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_stubborn_sticking_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_stubborn_sticking_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['stubborn_sticking']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_damaged_hazoff_all_scratched",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_hazoff_all_scratched_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_hazoff_all_scratched_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_damaged_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_damaged_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_damaged_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_damaged_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['damaged']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['undamaged']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_scratched_type_swap_raw_egg1_and_boiled_egg1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_scratched_type_swap_raw_egg1_and_boiled_egg1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_scratched_type_swap_raw_egg1_and_boiled_egg1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_scratched_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_scratched_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_scratched_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_hazoff_all_scratched_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_scratched_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_hazoff_all_scratched_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['scratched']}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['non_scratched']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_type_swap_raw_egg1_and_boiled_egg1_type_swap_milk1_and_milk2",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_type_swap_raw_egg1_and_boiled_egg1_type_swap_milk1_and_milk2_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_type_swap_raw_egg1_and_boiled_egg1_type_swap_milk1_and_milk2_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_type_swap_raw_egg1_and_boiled_egg1_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_type_swap_raw_egg1_and_boiled_egg1_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_type_swap_raw_egg1_and_boiled_egg1_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'raw_egg1': 'boiled_egg'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'boiled_egg1': 'raw_egg'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "bkv3_mix_type_swap_milk1_and_milk2_type_swap_sugar1_and_salt1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_type_swap_milk1_and_milk2_type_swap_sugar1_and_salt1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/bkv3_fixed/bkv3_fixed/bkv3_mix_type_swap_milk1_and_milk2_type_swap_sugar1_and_salt1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk1': 'fresh_milk'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'milk2': 'spoiled_milk'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'sugar1': 'salt'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'salt1': 'sugar'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  }
+]

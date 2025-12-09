@@ -1,0 +1,394 @@
+[
+  {
+    "name": "overcooked_spike_open_door_onion_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_spike_open_door_onion_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_spike_open_door_onion_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_spike_open_door_tomato_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_spike_open_door_tomato_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_spike_open_door_tomato_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_spike_open_door_dish_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_spike_open_door_dish_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_spike_open_door_dish_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_hazoff_all_careless_pickup_tomato",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_hazoff_all_careless_pickup_tomato_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_hazoff_all_careless_pickup_tomato_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_hazoff_all_careless_pickup_dish",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_hazoff_all_careless_pickup_dish_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_hazoff_all_careless_pickup_dish_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_type_swap_onion_d1_and_tomato_d1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_type_swap_onion_d1_and_tomato_d1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_type_swap_onion_d1_and_tomato_d1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_onion_10000_spike_open_door_tomato_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_spike_open_door_tomato_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_spike_open_door_tomato_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_onion_10000_spike_open_door_dish_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_spike_open_door_dish_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_spike_open_door_dish_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_onion_10000_hazoff_all_careless_pickup_tomato",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_hazoff_all_careless_pickup_tomato_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_hazoff_all_careless_pickup_tomato_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_onion_10000_hazoff_all_careless_pickup_dish",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_hazoff_all_careless_pickup_dish_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_hazoff_all_careless_pickup_dish_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_onion_10000_type_swap_onion_d1_and_tomato_d1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_type_swap_onion_d1_and_tomato_d1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_type_swap_onion_d1_and_tomato_d1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_onion_10000_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_onion_10000_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_onion', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_tomato_10000_spike_open_door_dish_10000",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_spike_open_door_dish_10000_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_spike_open_door_dish_10000_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_tomato_10000_hazoff_all_careless_pickup_tomato",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_hazoff_all_careless_pickup_tomato_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_hazoff_all_careless_pickup_tomato_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_tomato_10000_hazoff_all_careless_pickup_dish",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_hazoff_all_careless_pickup_dish_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_hazoff_all_careless_pickup_dish_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_tomato_10000_type_swap_onion_d1_and_tomato_d1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_type_swap_onion_d1_and_tomato_d1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_type_swap_onion_d1_and_tomato_d1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_tomato_10000_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_tomato_10000_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_tomato', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_dish_10000_hazoff_all_careless_pickup_tomato",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_hazoff_all_careless_pickup_tomato_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_hazoff_all_careless_pickup_tomato_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_dish_10000_hazoff_all_careless_pickup_dish",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_hazoff_all_careless_pickup_dish_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_hazoff_all_careless_pickup_dish_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_dish_10000_type_swap_onion_d1_and_tomato_d1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_type_swap_onion_d1_and_tomato_d1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_type_swap_onion_d1_and_tomato_d1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_spike_open_door_dish_10000_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_spike_open_door_dish_10000_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: add_cost_spike {'op': 'add_cost_spike', 'action_substr': 'open_door_dish', 'K': 10000}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_hazoff_all_careless_pickup_tomato_hazoff_all_careless_pickup_dish",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_tomato_hazoff_all_careless_pickup_dish_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_tomato_hazoff_all_careless_pickup_dish_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_hazoff_all_careless_pickup_tomato_type_swap_onion_d1_and_tomato_d1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_tomato_type_swap_onion_d1_and_tomato_d1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_tomato_type_swap_onion_d1_and_tomato_d1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_hazoff_all_careless_pickup_tomato_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_tomato_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_tomato_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_tomato']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_hazoff_all_careless_pickup_dish_type_swap_onion_d1_and_tomato_d1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_dish_type_swap_onion_d1_and_tomato_d1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_dish_type_swap_onion_d1_and_tomato_d1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_hazoff_all_careless_pickup_dish_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_dish_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_hazoff_all_careless_pickup_dish_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: remove_effect_predicates {'op': 'remove_effect_predicates', 'predicates': ['careless_pickup_dish']}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  },
+  {
+    "name": "overcooked_mix_type_swap_onion_d1_and_tomato_d1_type_swap_serve_c1_and_white_counter1",
+    "domain": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_type_swap_onion_d1_and_tomato_d1_type_swap_serve_c1_and_white_counter1_domain.pddl",
+    "problem": "/home/ayanoh/pddl_variant_automator/generated/overcooked_fixed/overcooked_fixed/overcooked_mix_type_swap_onion_d1_and_tomato_d1_type_swap_serve_c1_and_white_counter1_problem.pddl",
+    "log": [
+      [
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'onion_d1': 'tomato_dispenser'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'tomato_d1': 'onion_dispenser'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'serve_c1': 'white_counter'}}",
+        "OK: swap_object_types {'op': 'swap_object_types', 'renames': {'white_counter1': 'serve_counter'}}",
+        "NOOP: ensure_metric {'op': 'ensure_metric'}"
+      ],
+      true
+    ]
+  }
+]
